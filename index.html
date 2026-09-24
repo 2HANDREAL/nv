@@ -190,27 +190,11 @@
         <div class="task-list" id="taskList">
             <!-- JS Render -->
         </div>
-        
-        <div class="sync-status" id="syncStatus"><i class="fas fa-spinner fa-spin"></i> Đang kết nối dữ liệu...</div>
     </div>
 
-    <script type="module">
+    <script>
         const TELEGRAM_BOT_TOKEN = '8741437914:AAHZjk0SvWDeaAK3D8DPgp0Uke08ZVNd_g4';
         const TELEGRAM_CHAT_ID = '8511070091';
-
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'nhat-ky-be-ngoan-app';
-        let firebaseConfig;
-        try {
-            firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-        } catch(e) { console.error("Firebase config error"); }
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
 
         // Danh sách 15 nhiệm vụ Ngoan đã được cập nhật - Đồng giá 5k - Kèm Icon kute
         const tasks = [
@@ -238,49 +222,27 @@
             lastActiveDate: '',
             completedToday: [] // Mảng chứa ID các nhiệm vụ đã làm trong ngày
         };
-        let isSyncing = false;
         
-        // RULE 1: Strict Paths
-        const stateRef = doc(db, 'artifacts', appId, 'public', 'data', 'daily_ngoan_v2', 'main_wallet');
-
-        async function initCloudSync() {
-            try {
-                const authToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-                if (authToken) {
-                    await signInWithCustomToken(auth, authToken);
-                } else {
-                    await signInAnonymously(auth);
+        function initApp() {
+            // Tải dữ liệu từ Local Storage (Hoạt động hoàn toàn Offline)
+            const savedData = localStorage.getItem('beNgoanData');
+            if (savedData) {
+                try {
+                    state = JSON.parse(savedData);
+                } catch (e) {
+                    console.error("Lỗi đọc dữ liệu:", e);
                 }
-                
-                if (!auth.currentUser) return;
-
-                // RULE 3: Auth Before Queries & Error Callback
-                onSnapshot(stateRef, (docSnap) => {
-                    if (docSnap.exists()) {
-                        state = docSnap.data();
-                        checkDailyReset(); // Kiểm tra qua ngày sau khi tải data
-                    } else {
-                        state.lastActiveDate = getCurrentDateStr();
-                        saveToCloud();
-                    }
-                    
-                    isSyncing = true;
-                    document.getElementById('syncStatus').style.display = 'none';
-                    updateUI();
-                }, (error) => {
-                    console.error("Lỗi đồng bộ:", error);
-                    document.getElementById('syncStatus').innerHTML = '<i class="fas fa-exclamation-triangle"></i> Lỗi kết nối đám mây!';
-                });
-            } catch (e) {
-                console.error("Auth error:", e);
+            } else {
+                state.lastActiveDate = getCurrentDateStr();
+                saveData();
             }
+            
+            checkDailyReset(); 
+            updateUI();
         }
 
-        async function saveToCloud() {
-            if (!auth.currentUser) return;
-            try {
-                await setDoc(stateRef, state, { merge: true });
-            } catch (e) { console.error("Lỗi lưu:", e); }
+        function saveData() {
+            localStorage.setItem('beNgoanData', JSON.stringify(state));
         }
 
         function getCurrentDateStr() {
@@ -305,11 +267,11 @@
 
         function checkDailyReset() {
             const todayStr = getCurrentDateStr();
-            // Nếu ngày lưu trong DB khác với ngày hiện tại => Sang ngày mới => Reset tiến độ
+            // Nếu ngày lưu trong máy khác với ngày hiện tại => Sang ngày mới => Reset tiến độ
             if (state.lastActiveDate !== todayStr) {
                 state.lastActiveDate = todayStr;
                 state.completedToday = []; 
-                saveToCloud(); // Lưu cập nhật ngày mới lên cloud
+                saveData(); // Lưu cập nhật ngày mới
             }
         }
 
@@ -349,11 +311,6 @@
         }
 
         window.handleTaskClick = function(taskId, taskDesc, isCompleted) {
-            if (!isSyncing) {
-                Swal.fire({title: 'Đợi xíu!', text: 'Đang kết nối dữ liệu...', icon: 'info', customClass: { popup: 'custom-popup' }, confirmButtonColor: 'var(--primary)'});
-                return;
-            }
-            
             if (isCompleted) {
                 Swal.fire({
                     title: 'Đã tích rồi nha!',
@@ -386,7 +343,8 @@
         function processCompletion(taskId, taskDesc) {
             state.balance += REWARD_AMOUNT;
             state.completedToday.push(taskId);
-            saveToCloud(); // Đồng bộ ngay lên mây
+            saveData(); 
+            updateUI(); // Cập nhật lại UI sau khi làm xong
             
             // Hiệu ứng pháo giấy rực rỡ kute
             const colors = ['#ff8fab', '#fb6f92', '#80ed99', '#ffffff', '#ffe5ec'];
@@ -396,7 +354,6 @@
         }
 
         window.withdrawMoney = function() {
-            if (!isSyncing) return;
             if (state.balance <= 0) {
                 Swal.fire({ 
                     title: 'Ví bé trống trơn', 
@@ -423,7 +380,8 @@
                 if (result.isConfirmed) {
                     sendTelegram(`💸 <b>ĐẬP HEO BÉ NGOAN!</b>\n\n💵 <b>Số tiền rút:</b> ${state.balance.toLocaleString('vi-VN')}đ\n\nDaddy mau chuyển khoản thưởng cho bé ngoan đi kìa!`);
                     state.balance = 0;
-                    saveToCloud();
+                    saveData();
+                    updateUI(); // Cập nhật lại ví tiền
                     
                     // Bắn pháo bông to khi rút tiền
                     const colors = ['#ffd700', '#ff8fab', '#80ed99'];
@@ -441,8 +399,7 @@
         }
 
         // Khởi động
-        document.getElementById('dateDisplay').innerText = formatDisplayDate();
-        initCloudSync();
+        initApp();
     </script>
 </body>
 </html>
