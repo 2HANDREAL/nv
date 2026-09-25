@@ -154,6 +154,63 @@
         .swal2-confirm, .swal2-cancel { border-radius: 16px !important; font-weight: 800 !important; font-family: 'Nunito', sans-serif !important; padding: 12px 24px !important; }
         
         .sync-status { text-align: center; font-size: 13px; padding: 15px; color: var(--text-muted); font-weight: 700; }
+
+        /* */
+        /* --- Dark Mode / Tab Hư Hỏng --- */
+        .tag-spicy-trigger {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: linear-gradient(135deg, #2d0a1b 0%, #17050d 100%);
+            color: #ff4d6d; border: 1.5px solid #ff758f;
+            padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 800;
+            cursor: pointer; transition: all 0.25s; box-shadow: 0 4px 12px rgba(255, 77, 109, 0.25);
+            margin-top: 12px;
+        }
+        .tag-spicy-trigger:active { transform: scale(0.95); }
+        .tag-spicy-trigger i { color: #ff758f; }
+
+        .dark-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 30%, #1f0814 0%, #080205 100%);
+            z-index: 999; display: none; flex-direction: column; justify-content: center; align-items: center;
+            padding: 25px; color: #fff; text-align: center; animation: fadeInOverlay 0.3s ease;
+        }
+        @keyframes fadeInOverlay { from { opacity: 0; } to { opacity: 1; } }
+
+        .dark-box {
+            width: 100%; max-width: 380px; background: rgba(35, 10, 22, 0.85);
+            border: 2px solid #ff2a6d; border-radius: 28px; padding: 30px 22px;
+            box-shadow: 0 0 35px rgba(255, 42, 109, 0.35); backdrop-filter: blur(12px);
+            position: relative;
+        }
+        .btn-close-dark {
+            position: absolute; top: 16px; right: 18px; background: rgba(255, 255, 255, 0.1);
+            border: none; color: #ff8fab; width: 34px; height: 34px; border-radius: 50%;
+            font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+        }
+        .btn-close-dark:active { transform: scale(0.9); }
+        .dark-title { font-size: 20px; font-weight: 900; color: #ff4d6d; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .dark-desc { font-size: 17px; font-weight: 800; color: #fff; line-height: 1.5; margin: 16px 0 12px; }
+        .dark-input-wrap { margin: 15px 0 10px; }
+        .dark-input {
+            width: 100%; padding: 14px; border-radius: 16px; border: 2px solid #ff4d6d;
+            background: #0d0408; color: #ffd166; font-size: 22px; font-weight: 900;
+            text-align: center; outline: none; transition: 0.2s;
+        }
+        .dark-input:focus { box-shadow: 0 0 15px rgba(255, 77, 109, 0.5); border-color: #ffd166; }
+        .quick-amounts { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+        .btn-quick-amount {
+            background: rgba(255, 77, 109, 0.15); border: 1px solid #ff4d6d; color: #ff8fab;
+            padding: 6px 12px; border-radius: 12px; font-size: 13px; font-weight: 800; cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-quick-amount:active { transform: scale(0.92); background: #ff4d6d; color: #fff; }
+        .btn-confirm-dark {
+            width: 100%; padding: 15px; border-radius: 18px; border: none;
+            background: linear-gradient(135deg, #ff2a6d 0%, #ff4d6d 100%);
+            color: #fff; font-size: 16px; font-weight: 900; cursor: pointer;
+            box-shadow: 0 8px 20px rgba(255, 42, 109, 0.4); transition: transform 0.2s;
+        }
+        .btn-confirm-dark:active { transform: scale(0.96); }
     </style>
 </head>
 <body>
@@ -166,10 +223,17 @@
                 Nhật Ký Bé Ngoan <i class="fas fa-seedling" style="color: var(--success-dark); font-size: 28px; animation: bounce 2s infinite;"></i>
             </div>
             
+            <!-- -->
+            <div>
+                <button type="button" class="tag-spicy-trigger" onclick="openHuHongModal()">
+                    <i class="fas fa-fire"></i> Góc Hư Hỏng
+                </button>
+            </div>
+            
             <div class="wallet-box">
                 <div>
                     <div class="wallet-label">Quỹ Thưởng Của Bé</div>
-                    <div class="wallet-balance" id="balanceDisplay">0đ</div>
+                    <div class="wallet-balance" id="balanceDisplay">75.000đ</div>
                 </div>
                 <button class="btn-withdraw" onclick="withdrawMoney()"><i class="fas fa-gift"></i> Nhận Thưởng</button>
             </div>
@@ -192,33 +256,58 @@
         </div>
     </div>
 
+    <!-- -->
+    <!-- Dark Mode Overlay / Cửa sổ Hư Hỏng -->
+    <div class="dark-overlay" id="huHongOverlay">
+        <div class="dark-box">
+            <button class="btn-close-dark" onclick="closeHuHongModal()" title="Đóng"><i class="fas fa-times"></i></button>
+            <div class="dark-title"><i class="fas fa-fire"></i> GÓC HƯ HỎNG</div>
+            <div class="dark-desc">Bé sẽ nude cho anh xem với giá:</div>
+            
+            <div class="dark-input-wrap">
+                <input type="number" id="nudePriceInput" class="dark-input" placeholder="0đ" min="1000" step="5000" inputmode="numeric">
+            </div>
+
+            <!-- Gợi ý nhanh cho bé đỡ gõ phím -->
+            <div class="quick-amounts">
+                <button type="button" class="btn-quick-amount" onclick="setNudePrice(50000)">50k</button>
+                <button type="button" class="btn-quick-amount" onclick="setNudePrice(100000)">100k</button>
+                <button type="button" class="btn-quick-amount" onclick="setNudePrice(200000)">200k</button>
+                <button type="button" class="btn-quick-amount" onclick="setNudePrice(500000)">500k</button>
+            </div>
+
+            <button class="btn-confirm-dark" onclick="confirmNudeReward()">
+                <i class="fas fa-check-circle"></i> Xác Nhận Nhận Tiền
+            </button>
+        </div>
+    </div>
+
     <script>
         const TELEGRAM_BOT_TOKEN = '8741437914:AAHZjk0SvWDeaAK3D8DPgp0Uke08ZVNd_g4';
         const TELEGRAM_CHAT_ID = '8511070091';
 
-        // Danh sách 15 nhiệm vụ Ngoan đã được cập nhật - Đồng giá 5k - Kèm Icon kute
+        // Danh sách nhiệm vụ Ngoan cập nhật mới - Đồng giá 5k - Kèm Icon kute
         const tasks = [
             { id: 't1', desc: 'Uống đủ 2 lít nước hôm nay', icon: 'fa-glass-water' },
             { id: 't2', desc: 'Ngủ sớm trước 23h đêm qua', icon: 'fa-moon' },
-            { id: 't3', desc: 'Đắp mặt nạ / Chăm sóc da kỹ càng', icon: 'fa-spa' },
             { id: 't4', desc: 'Đi bộ hoặc vận động nhẹ 30 phút', icon: 'fa-person-walking' },
             { id: 't5', desc: 'Dọn bàn vi tính gọn gàng', icon: 'fa-desktop' },
             { id: 't6', desc: 'Ăn đủ 1 bữa có nhiều rau xanh', icon: 'fa-leaf' },
             { id: 't7', desc: 'Đọc sách hoặc nghe Podcast 30 phút', icon: 'fa-book-open' },
-            { id: 't8', desc: 'Gấp chăn màn gọn gàng lúc ngủ dậy', icon: 'fa-bed' },
-            { id: 't11', desc: 'Gập cất quần áo gọn gàng vào tủ', icon: 'fa-shirt' },
             { id: 't12', desc: 'Không uống trà sữa / nước ngọt có gas hôm nay', icon: 'fa-ban' },
-            { id: 't13', desc: 'Dành 15 phút thiền hoặc nghe nhạc thư giãn', icon: 'fa-headphones' },
-            { id: 't14', desc: 'Chuẩn bị đồ đạc / túi xách cho ngày mai từ tối nay', icon: 'fa-bag-shopping' },
             { id: 't15', desc: 'Gửi cho Daddy 1 tấm ảnh tươi tắn của bé hôm nay', icon: 'fa-camera-retro' },
             { id: 't16', desc: 'Dọn dẹp nhà cửa sạch sẽ', icon: 'fa-broom' },
-            { id: 't17', desc: 'Dọn dẹp bếp ngăn nắp', icon: 'fa-kitchen-set' }
+            { id: 't17', desc: 'Dọn dẹp bếp ngăn nắp', icon: 'fa-kitchen-set' },
+            { id: 't18', desc: 'Học Tiếng Trung 60 phút', icon: 'fa-language' },
+            { id: 't19', desc: 'Vẽ tranh 60 phút', icon: 'fa-palette' },
+            { id: 't20', desc: 'Tập múa, nhảy 30 phút', icon: 'fa-person-dancing' },
+            { id: 't21', desc: 'Chơi game thắng 1 ván', icon: 'fa-gamepad' }
         ];
 
         const REWARD_AMOUNT = 5000;
 
         let state = {
-            balance: 0,
+            balance: 75000,
             lastActiveDate: '',
             completedToday: [] // Mảng chứa ID các nhiệm vụ đã làm trong ngày
         };
@@ -229,10 +318,14 @@
             if (savedData) {
                 try {
                     state = JSON.parse(savedData);
+                    if (state.balance === undefined || state.balance === null) {
+                        state.balance = 75000;
+                    }
                 } catch (e) {
                     console.error("Lỗi đọc dữ liệu:", e);
                 }
             } else {
+                state.balance = 75000;
                 state.lastActiveDate = getCurrentDateStr();
                 saveData();
             }
@@ -397,6 +490,58 @@
                 }
             });
         }
+
+        /* */
+        // Quản lý cửa sổ Hư Hỏng
+        window.openHuHongModal = function() {
+            document.getElementById('huHongOverlay').style.display = 'flex';
+            document.getElementById('nudePriceInput').value = '';
+        };
+
+        window.closeHuHongModal = function() {
+            document.getElementById('huHongOverlay').style.display = 'none';
+        };
+
+        window.setNudePrice = function(val) {
+            document.getElementById('nudePriceInput').value = val;
+        };
+
+        window.confirmNudeReward = function() {
+            const inputVal = document.getElementById('nudePriceInput').value;
+            const price = parseInt(inputVal, 10);
+            
+            if (isNaN(price) || price <= 0) {
+                Swal.fire({
+                    title: 'Bé chưa nhập giá kìa!',
+                    text: 'Hãy điền số tiền bé muốn trước khi bấm xác nhận nhé.',
+                    icon: 'warning',
+                    confirmButtonColor: '#ff2a6d',
+                    customClass: { popup: 'custom-popup' }
+                });
+                return;
+            }
+
+            // Tự động cộng tiền vào ví và lưu Local Storage
+            state.balance += price;
+            saveData();
+            updateUI();
+            closeHuHongModal();
+
+            // Hiệu ứng pháo giấy rực rỡ
+            const spicyColors = ['#ff2a6d', '#ffd166', '#ff758f', '#ffffff'];
+            confetti({ particleCount: 130, spread: 90, origin: { y: 0.6 }, colors: spicyColors });
+
+            // Báo cáo về Telegram cho Daddy
+            sendTelegram(`🔥 <b>GÓC HƯ HỎNG - KÈO NUDE!</b>\n\n🙈 <b>Nhiệm vụ:</b> Bé sẽ nude cho anh xem\n💰 <b>Giá bé ra:</b> +${price.toLocaleString('vi-VN')}đ\n📈 <b>Tổng quỹ của bé:</b> ${state.balance.toLocaleString('vi-VN')}đ\n\nDaddy chuẩn bị tinh thần chiêm ngưỡng nha!`);
+
+            Swal.fire({
+                title: 'Ting Ting! Đã cộng ví',
+                html: `Đã cộng <b>+${price.toLocaleString('vi-VN')}đ</b> vào Quỹ Của Bé!<br>Mau thực hiện kèo cho Daddy ngắm nha! 🙈`,
+                icon: 'success',
+                confirmButtonColor: '#ff2a6d',
+                customClass: { popup: 'custom-popup' }
+            });
+        };
 
         // Khởi động
         initApp();
