@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Nhật Ký Bé Ngoan</title>
+    <title>Nhật Ký Bé Ngoan - Thử Thách 100 Câu</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -12,7 +12,6 @@
 
     <style>
         :root {
-            /* Bảng màu Pastel kẹo ngọt */
             --bg-app: #fff0f5;
             --bg-card: #ffffff;
             --primary: #ff8fab;
@@ -60,8 +59,8 @@
         /* --- Header & Dashboard --- */
         .dashboard-header {
             background: linear-gradient(145deg, #ffffff 0%, #ffe5ec 100%);
-            padding: 24px 22px 26px;
-            border-radius: 0 0 38px 38px;
+            padding: 22px 20px 24px;
+            border-radius: 0 0 36px 36px;
             box-shadow: 0 15px 30px rgba(255, 143, 171, 0.15);
             position: sticky;
             top: 0;
@@ -69,11 +68,11 @@
         }
 
         .date-display {
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 800;
             color: var(--primary-dark);
             text-transform: uppercase;
-            letter-spacing: 1.4px;
+            letter-spacing: 1.3px;
             margin-bottom: 6px;
             display: flex;
             align-items: center;
@@ -82,7 +81,7 @@
         }
 
         .header-title {
-            font-size: 25px;
+            font-size: 24px;
             font-weight: 900;
             color: var(--text-main);
             display: flex;
@@ -97,7 +96,7 @@
         }
         .seedling-icon {
             color: var(--success-dark);
-            font-size: 27px;
+            font-size: 26px;
             animation: bounceSeedling 2.2s ease-in-out infinite;
         }
 
@@ -105,7 +104,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-top: 12px;
+            margin-top: 10px;
             flex-wrap: wrap;
         }
 
@@ -116,9 +115,9 @@
             background: var(--primary-light);
             color: var(--primary-dark);
             border: 1.5px solid #ffb3c6;
-            padding: 6px 12px;
+            padding: 5px 11px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 800;
         }
 
@@ -129,9 +128,9 @@
             background: linear-gradient(135deg, #2d0a1b 0%, #17050d 100%);
             color: #ff4d6d;
             border: 1.5px solid #ff758f;
-            padding: 6px 14px;
+            padding: 5px 13px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 800;
             cursor: pointer;
             transition: all 0.2s;
@@ -144,8 +143,8 @@
         .wallet-box {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
-            margin-top: 18px;
-            padding: 20px;
+            margin-top: 16px;
+            padding: 18px 20px;
             border-radius: 24px;
             display: flex;
             justify-content: space-between;
@@ -173,13 +172,13 @@
         }
 
         .wallet-label {
-            font-size: 13px;
+            font-size: 12.5px;
             color: rgba(255, 255, 255, 0.92);
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
         .wallet-balance {
-            font-size: 30px;
+            font-size: 29px;
             font-weight: 900;
             letter-spacing: 0.5px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -189,7 +188,7 @@
             background: white;
             color: var(--primary-dark);
             border: none;
-            padding: 11px 16px;
+            padding: 11px 15px;
             border-radius: 16px;
             font-weight: 800;
             font-size: 13px;
@@ -201,251 +200,77 @@
         }
         .btn-withdraw:active { transform: scale(0.92); }
 
-        /* --- Progress Section --- */
-        .progress-section {
-            padding: 22px 22px 12px;
+        /* --- Challenge Prize Pool Banner --- */
+        .challenge-banner {
+            margin: 18px 18px 10px;
+            background: linear-gradient(135deg, #ffffff 0%, #fff7eb 100%);
+            border: 2.5px solid #ffd166;
+            border-radius: 24px;
+            padding: 16px 18px;
+            box-shadow: 0 8px 20px rgba(255, 183, 3, 0.12);
         }
-        .progress-header {
+        .challenge-top {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        .progress-text {
-            font-size: 16px;
-            font-weight: 900;
-            color: var(--text-main);
-            display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 10px;
+            margin-bottom: 12px;
         }
-        .progress-subtext {
-            font-size: 13px;
-            color: var(--primary-dark);
+        .challenge-prize-label {
+            font-size: 12px;
             font-weight: 800;
-            background: var(--primary-light);
-            padding: 4px 12px;
-            border-radius: 12px;
+            color: #b45309;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .challenge-prize-val {
+            font-size: 26px;
+            font-weight: 900;
+            color: #d97706;
+            line-height: 1.15;
+        }
+        .challenge-progress-pill {
+            background: #fef3c7;
+            color: #92400e;
+            border: 1.5px solid #fcd34d;
+            padding: 6px 12px;
+            border-radius: 14px;
+            font-size: 13px;
+            font-weight: 900;
+            text-align: center;
+            flex-shrink: 0;
         }
         .progress-bar-bg {
             width: 100%;
-            height: 14px;
-            background: #fdf0f4;
+            height: 13px;
+            background: #fef3c7;
             border-radius: 20px;
             overflow: hidden;
-            border: 2px solid var(--border);
+            border: 1.5px solid #fde68a;
         }
         .progress-bar-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--success), var(--success-dark));
             width: 0%;
-            transition: width 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             border-radius: 20px;
         }
 
-        /* --- Rule Note --- */
-        .rule-note {
-            margin: 4px 20px 14px;
-            padding: 10px 14px;
+        /* --- Active Quiz Card (Inline Continuous Play) --- */
+        .quiz-stage {
+            margin: 6px 18px 16px;
             background: #ffffff;
-            border: 1.5px solid var(--border);
-            border-radius: 16px;
-            font-size: 12.5px;
-            font-weight: 700;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 12px rgba(251, 111, 146, 0.05);
-        }
-        .rule-note i {
-            color: var(--primary-dark);
-            font-size: 18px;
-            flex-shrink: 0;
-        }
-
-        /* --- 8 Mystery Bags Grid (2x4) --- */
-        .bags-grid {
-            padding: 4px 18px 20px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
-        }
-
-        .bag-card {
-            border-radius: 22px;
-            padding: 16px 12px;
-            min-height: 168px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s;
-            cursor: pointer;
-        }
-
-        /* Trạng thái: Chưa mở */
-        .bag-card.unopened {
-            background: linear-gradient(155deg, #ffffff 0%, #ffe8f0 100%);
             border: 2.5px solid #ffc2d4;
-            box-shadow: 0 8px 20px rgba(251, 111, 146, 0.14);
-        }
-        .bag-card.unopened::after {
-            content: '';
-            position: absolute;
-            top: -40%;
-            left: -60%;
-            width: 55%;
-            height: 180%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
-            transform: rotate(25deg);
-            animation: bagShimmer 3.8s infinite;
-            pointer-events: none;
-        }
-        @keyframes bagShimmer {
-            0% { left: -70%; }
-            45%, 100% { left: 140%; }
-        }
-        .bag-card.unopened:active {
-            transform: scale(0.94);
+            border-radius: 26px;
+            padding: 20px 18px;
+            box-shadow: 0 12px 28px rgba(251, 111, 146, 0.13);
         }
 
-        .bag-number {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 10.5px;
-            font-weight: 900;
-            color: var(--primary-dark);
-            background: rgba(255, 255, 255, 0.85);
-            padding: 2px 8px;
-            border-radius: 10px;
-            border: 1px solid #ffd6e0;
-        }
-
-        .bag-icon-wrap {
-            width: 54px;
-            height: 54px;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin-top: 12px;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Màu 4 chủ đề chính */
-        .cat-chinese { background: linear-gradient(135deg, #c084fc, #a855f7); color: #fff; }
-        .cat-cooking { background: linear-gradient(135deg, #fb923c, #f97316); color: #fff; }
-        .cat-plant { background: linear-gradient(135deg, #57cc99, #38b000); color: #fff; }
-        .cat-edu18 { background: linear-gradient(135deg, #ff4d6d, #c9184a); color: #fff; }
-        .cat-custom { background: linear-gradient(135deg, #60a5fa, #3b82f6); color: #fff; }
-
-        .bag-category {
-            font-size: 13.5px;
-            font-weight: 900;
-            color: var(--text-main);
-            line-height: 1.3;
-            margin: 8px 0 4px;
-        }
-
-        .bag-tag {
-            font-size: 11.5px;
-            font-weight: 800;
-            padding: 4px 10px;
-            border-radius: 12px;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-        .bag-tag-mystery {
-            background: linear-gradient(135deg, #ff8fab, #fb6f92);
-            color: #fff;
-            box-shadow: 0 4px 10px rgba(251, 111, 146, 0.25);
-        }
-
-        /* Trạng thái: Đã thắng */
-        .bag-card.won {
-            background: linear-gradient(155deg, #f0fdf4 0%, #dcfce7 100%);
-            border: 2.5px solid var(--success);
-            box-shadow: 0 6px 14px rgba(87, 204, 153, 0.14);
-            cursor: default;
-        }
-        .bag-card.won .bag-icon-wrap {
-            background: var(--success-dark);
-            color: #fff;
-        }
-        .bag-tag-won {
-            background: var(--success-dark);
-            color: #fff;
-            font-size: 13px;
-            padding: 5px 12px;
-        }
-
-        /* Trạng thái: Đã thua */
-        .bag-card.lost {
-            background: linear-gradient(155deg, #f8f5f7 0%, #f3e8ee 100%);
-            border: 2px solid #e5d5de;
-            box-shadow: none;
-            opacity: 0.85;
-            cursor: default;
-        }
-        .bag-card.lost .bag-icon-wrap {
-            background: #d8c2cc;
-            color: #fff;
-        }
-        .bag-tag-lost {
-            background: #e9d8e0;
-            color: #7d6873;
-            font-size: 11px;
-        }
-
-        /* =========================================
-           MODAL OVERLAYS (QUIZ, WHEEL, PENALTY, ADMIN, DARK)
-           ========================================= */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(58, 35, 50, 0.72);
-            backdrop-filter: blur(6px);
-            z-index: 500;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            padding: 18px;
-            animation: fadeInOverlay 0.25s ease;
-        }
-        .modal-overlay.active {
-            display: flex;
-        }
-        @keyframes fadeInOverlay {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-card {
-            width: 100%;
-            max-width: 420px;
-            max-height: 92vh;
-            overflow-y: auto;
-            background: #ffffff;
-            border-radius: 28px;
-            padding: 24px 20px;
-            box-shadow: 0 22px 48px rgba(0, 0, 0, 0.25);
-            border: 3px solid #ffe5ec;
-            position: relative;
-        }
-
-        /* --- Quiz Modal --- */
         .quiz-top-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             gap: 8px;
         }
         .quiz-cat-badge {
@@ -453,27 +278,31 @@
             font-weight: 900;
             padding: 5px 12px;
             border-radius: 12px;
-            background: var(--primary-light);
-            color: var(--primary-dark);
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
         }
-        .quiz-bag-badge {
+        .cat-hsk2 { background: #f3e8ff; color: #7e22ce; }
+        .cat-math { background: #ffedd5; color: #c2410c; }
+        .cat-spell { background: #dcfce7; color: #15803d; }
+        .cat-comm { background: #ffe4e6; color: #be123c; }
+        .cat-custom { background: #dbeafe; color: #1d4ed8; }
+
+        .quiz-step-badge {
             font-size: 12px;
-            font-weight: 800;
-            color: var(--text-muted);
-            background: #f6eff3;
-            padding: 5px 10px;
+            font-weight: 900;
+            color: var(--primary-dark);
+            background: var(--primary-light);
+            padding: 5px 11px;
             border-radius: 12px;
         }
 
         .timer-wrap {
             background: #fff5f8;
             border: 2px solid #ffd6e0;
-            border-radius: 20px;
-            padding: 12px 16px;
-            margin-bottom: 18px;
+            border-radius: 18px;
+            padding: 10px 14px;
+            margin-bottom: 16px;
             transition: all 0.25s;
         }
         .timer-wrap.danger {
@@ -490,15 +319,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .timer-label {
-            font-size: 12.5px;
+            font-size: 12px;
             font-weight: 800;
             color: var(--text-muted);
         }
         .timer-number {
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 900;
             color: var(--primary-dark);
             line-height: 1;
@@ -508,7 +337,7 @@
         }
         .timer-bar-bg {
             width: 100%;
-            height: 10px;
+            height: 8px;
             background: #ffe0ea;
             border-radius: 10px;
             overflow: hidden;
@@ -525,15 +354,15 @@
         }
 
         .quiz-question {
-            font-size: 17.5px;
+            font-size: 17px;
             font-weight: 900;
             color: var(--text-main);
-            line-height: 1.45;
+            line-height: 1.48;
             text-align: center;
-            margin-bottom: 18px;
-            padding: 10px 8px;
+            margin-bottom: 16px;
+            padding: 14px 12px;
             background: #fff9fb;
-            border-radius: 16px;
+            border-radius: 18px;
             border: 1.5px solid #ffe5ec;
         }
 
@@ -553,7 +382,7 @@
             gap: 12px;
             text-align: left;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.18s;
             color: var(--text-main);
             font-size: 14.5px;
             font-weight: 800;
@@ -598,102 +427,78 @@
             color: #fff;
         }
 
-        /* --- Prize Wheel Modal --- */
-        .wheel-modal-card {
+        /* Start / Resume / Completed Card */
+        .status-card {
             text-align: center;
-            background: linear-gradient(180deg, #ffffff 0%, #fff4f8 100%);
-            border-color: #ffb3c6;
+            padding: 18px 10px;
         }
-        .wheel-title {
-            font-size: 21px;
+        .status-emoji {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .status-title {
+            font-size: 20px;
             font-weight: 900;
             color: var(--primary-dark);
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
-        .wheel-subtitle {
-            font-size: 13px;
+        .status-desc {
+            font-size: 13.5px;
             font-weight: 700;
             color: var(--text-muted);
-            margin-bottom: 16px;
+            line-height: 1.5;
+            margin-bottom: 18px;
         }
-
-        .wheel-stage {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        @media (max-width: 360px) {
-            .wheel-stage {
-                width: 268px;
-                height: 268px;
-            }
-        }
-
-        .wheel-pointer {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 15;
-            width: 34px;
-            height: 42px;
-            transform-origin: 50% 8px;
-            filter: drop-shadow(0 4px 6px rgba(201, 24, 74, 0.35));
-            transition: transform 0.06s ease-out;
-        }
-        .wheel-pointer.tick {
-            transform: translateX(-50%) rotate(-18deg);
-        }
-
-        #prizeWheelCanvas {
-            width: 100%;
-            height: 100%;
-            display: block;
-            border-radius: 50%;
-            box-shadow: 0 12px 30px rgba(251, 111, 146, 0.28);
-        }
-
-        .wheel-center-cap {
-            position: absolute;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #fff, #ffe5ec);
-            border: 4px solid var(--primary-dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-dark);
-            font-size: 18px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            z-index: 10;
-            pointer-events: none;
-        }
-
-        .btn-spin-now {
+        .btn-primary-big {
             width: 100%;
             padding: 15px 20px;
             border: none;
             border-radius: 18px;
             background: linear-gradient(135deg, #ff8fab 0%, #fb6f92 100%);
             color: #fff;
-            font-size: 17px;
+            font-size: 16.5px;
             font-weight: 900;
-            letter-spacing: 0.5px;
             cursor: pointer;
-            box-shadow: 0 10px 22px rgba(251, 111, 146, 0.4);
-            transition: transform 0.2s, opacity 0.2s;
+            box-shadow: 0 10px 22px rgba(251, 111, 146, 0.35);
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            transition: transform 0.2s;
         }
-        .btn-spin-now:active:not(:disabled) { transform: scale(0.96); }
-        .btn-spin-now:disabled { opacity: 0.65; cursor: not-allowed; box-shadow: none; }
+        .btn-primary-big:active { transform: scale(0.96); }
+
+        /* --- Modals (Penalty, Admin, Dark) --- */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(58, 35, 50, 0.75);
+            backdrop-filter: blur(6px);
+            z-index: 500;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 18px;
+            animation: fadeInOverlay 0.25s ease;
+        }
+        .modal-overlay.active { display: flex; }
+        @keyframes fadeInOverlay {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-card {
+            width: 100%;
+            max-width: 420px;
+            max-height: 92vh;
+            overflow-y: auto;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 24px 20px;
+            box-shadow: 0 22px 48px rgba(0, 0, 0, 0.25);
+            border: 3px solid #ffe5ec;
+            position: relative;
+        }
 
         /* --- Penalty Modal --- */
         .penalty-card {
@@ -723,27 +528,7 @@
             font-weight: 700;
             color: var(--text-muted);
             margin-bottom: 16px;
-            line-height: 1.45;
-        }
-        .penalty-pose-box {
-            background: #fff5f8;
-            border: 2px dashed #ff8fab;
-            border-radius: 16px;
-            padding: 12px;
-            margin-bottom: 16px;
-        }
-        .penalty-pose-label {
-            font-size: 11.5px;
-            font-weight: 800;
-            color: var(--primary-dark);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .penalty-pose-text {
-            font-size: 16px;
-            font-weight: 900;
-            color: var(--text-main);
-            margin-top: 4px;
+            line-height: 1.5;
         }
 
         .penalty-actions {
@@ -841,7 +626,7 @@
         }
         .btn-send-photo:disabled { opacity: 0.6; cursor: not-allowed; }
 
-        /* --- Secret Admin Modal (Chạm 5 lần vào tiêu đề để mở) --- */
+        /* --- Secret Admin Modal --- */
         .admin-textarea {
             width: 100%;
             border: 2px solid #f3dce5;
@@ -983,7 +768,7 @@
             </div>
 
             <div class="header-actions">
-                <span class="tag-mode-badge"><i class="fas fa-dharmachakra"></i> Túi Mù 30s & Quay Số</span>
+                <span class="tag-mode-badge"><i class="fas fa-trophy"></i> Chinh Phục 100 Câu • 30s/Câu</span>
                 <button type="button" class="tag-spicy-trigger" onclick="openHuHongModal()">
                     <i class="fas fa-fire"></i> Góc Hư Hỏng
                 </button>
@@ -1000,96 +785,41 @@
             </div>
         </div>
 
-        <!-- Progress Section -->
-        <div class="progress-section">
-            <div class="progress-header">
-                <div class="progress-text"><i class="fas fa-box-open" style="color: var(--primary-dark);"></i> 8 Túi Mù Hôm Nay</div>
-                <div class="progress-subtext" id="progressText">0/8 hoàn thành</div>
+        <!-- Challenge Prize Pool Banner -->
+        <div class="challenge-banner">
+            <div class="challenge-top">
+                <div>
+                    <div class="challenge-prize-label"><i class="fas fa-crown"></i> Giải Thưởng Hoàn Thành 100 Câu</div>
+                    <div class="challenge-prize-val" id="prizePoolDisplay">200.000đ</div>
+                </div>
+                <div class="challenge-progress-pill" id="progressPill">0 / 100 câu</div>
             </div>
             <div class="progress-bar-bg">
                 <div class="progress-bar-fill" id="progressBar"></div>
             </div>
         </div>
 
-        <!-- Short Rule Note -->
-        <div class="rule-note">
-            <i class="fas fa-stopwatch"></i>
-            <span>Trả lời đúng trong <b>30 giây</b> để mở <b>Vòng Quay 1k – 20k</b>. Sai hoặc hết giờ: trừ 5k hoặc chụp ảnh gửi anh!</span>
-        </div>
-
-        <!-- 8 Mystery Bags Grid (2x4) -->
-        <div class="bags-grid" id="bagsGrid">
+        <!-- Active Quiz Stage -->
+        <div class="quiz-stage" id="quizStage">
             <!-- JS Render -->
         </div>
     </div>
 
     <!-- ==========================================
-         MODAL 1: TRẮC NGHIỆM 30 GIÂY
-         ========================================== -->
-    <div class="modal-overlay" id="quizModal">
-        <div class="modal-card">
-            <div class="quiz-top-row">
-                <span class="quiz-cat-badge" id="quizCatBadge"><i class="fas fa-star"></i> Chủ đề</span>
-                <span class="quiz-bag-badge" id="quizBagBadge">Túi #1</span>
-            </div>
-
-            <div class="timer-wrap" id="timerWrap">
-                <div class="timer-header">
-                    <span class="timer-label"><i class="fas fa-hourglass-half"></i> Thời gian còn lại</span>
-                    <span class="timer-number" id="timerNumber">30s</span>
-                </div>
-                <div class="timer-bar-bg">
-                    <div class="timer-bar-fill" id="timerBarFill"></div>
-                </div>
-            </div>
-
-            <div class="quiz-question" id="quizQuestion">Câu hỏi đang tải...</div>
-            <div class="quiz-options" id="quizOptions"></div>
-        </div>
-    </div>
-
-    <!-- ==========================================
-         MODAL 2: VÒNG QUAY SỐ THƯỞNG (1k - 20k)
-         ========================================== -->
-    <div class="modal-overlay" id="wheelModal">
-        <div class="modal-card wheel-modal-card">
-            <div class="wheel-title"><i class="fas fa-sparkles"></i> QUAY THƯỞNG NÀO BÉ ƠI!</div>
-            <div class="wheel-subtitle">Trả lời chuẩn quá! Bấm quay để xem lộc lá hôm nay nha</div>
-
-            <div class="wheel-stage">
-                <svg class="wheel-pointer" id="wheelPointer" viewBox="0 0 36 44" fill="none">
-                    <path d="M18 42L4 14C2 10 5 2 18 2C31 2 34 10 32 14L18 42Z" fill="#ff2a6d" stroke="#ffffff" stroke-width="3"/>
-                    <circle cx="18" cy="13" r="5" fill="#ffd166"/>
-                </svg>
-
-                <canvas id="prizeWheelCanvas"></canvas>
-
-                <div class="wheel-center-cap">
-                    <i class="fas fa-heart"></i>
-                </div>
-            </div>
-
-            <button type="button" class="btn-spin-now" id="btnSpinNow" onclick="startPrizeSpin()">
-                <i class="fas fa-play-circle"></i> QUAY NGAY!
-            </button>
-        </div>
-    </div>
-
-    <!-- ==========================================
-         MODAL 3: CHỌN HÌNH PHẠT (CHỐNG TRỐN PHẠT)
+         MODAL 1: CHỌN HÌNH PHẠT (CHỐNG TRỐN PHẠT)
          ========================================== -->
     <div class="modal-overlay" id="penaltyModal">
         <div class="modal-card penalty-card">
             <div class="penalty-icon"><i class="fas fa-face-dizzy"></i></div>
             <div class="penalty-title" id="penaltyTitle">Ôi không! Bé trả lời sai rồi!</div>
-            <div class="penalty-reason" id="penaltyReason">Bé hãy chọn 1 trong 2 hình phạt bên dưới để mở khóa tiếp nhé.</div>
+            <div class="penalty-reason" id="penaltyReason">Bé hãy chọn 1 trong 2 hình phạt bên dưới để tiếp tục thử thách nhé.</div>
 
             <div class="penalty-actions">
                 <button type="button" class="btn-penalty-money" id="btnPenaltyMoney" onclick="payMoneyPenalty()">
-                    <i class="fas fa-coins"></i> Trừ 5.000đ từ ví
+                    <i class="fas fa-coins"></i> Phạt -5.000đ vào tổng giải thưởng
                 </button>
                 <div class="low-balance-note" id="lowBalanceNote">
-                    Ví không đủ 5k, bé phải chụp ảnh thôi!
+                    Tổng giải thưởng còn dưới 5k, bé phải chụp ảnh thôi!
                 </div>
 
                 <!-- Input mở thẳng camera trước trên điện thoại -->
@@ -1115,18 +845,18 @@
     </div>
 
     <!-- ==========================================
-         MODAL 4: QUẢN TRỊ ẨN CHO DADDY (CHẠM 5 LẦN TIÊU ĐỀ)
+         MODAL 2: QUẢN TRỊ ẨN CHO DADDY (CHẠM 5 LẦN TIÊU ĐỀ)
          ========================================== -->
     <div class="modal-overlay" id="adminModal">
         <div class="modal-card">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                 <div style="font-size:18px; font-weight:900; color:var(--primary-dark);">
-                    <i class="fas fa-sliders"></i> Quản Trị Kho Câu Hỏi
+                    <i class="fas fa-sliders"></i> Quản Trị Thử Thách 100 Câu
                 </div>
                 <button type="button" onclick="closeAdminModal()" style="border:none; background:#f3e8ee; width:32px; height:32px; border-radius:50%; cursor:pointer; font-weight:900; color:var(--text-main);">✕</button>
             </div>
             <div style="font-size:12.5px; color:var(--text-muted); font-weight:700; line-height:1.45;">
-                Tổng kho hiện tại: <b id="adminBankCount" style="color:var(--primary-dark);">100 câu</b>.<br>
+                Tiến độ hiện tại: <b id="adminStatusText" style="color:var(--primary-dark);">0/100 câu</b>.<br>
                 Thêm câu mới theo cú pháp mỗi dòng 1 câu (đặt dấu <b>*</b> trước đáp án đúng):<br>
                 <code style="background:#fff0f5; padding:2px 5px; border-radius:6px; color:#fb6f92;">Chủ đề | Câu hỏi | Đáp án A | *Đáp án B | C | D</code>
             </div>
@@ -1135,8 +865,8 @@
                 <button type="button" class="btn-admin btn-admin-primary" onclick="importBulkQuestions()">
                     <i class="fas fa-plus"></i> Nạp Thêm Câu
                 </button>
-                <button type="button" class="btn-admin btn-admin-secondary" onclick="adminReshuffleBags()">
-                    <i class="fas fa-shuffle"></i> Xáo 8 Túi Mới
+                <button type="button" class="btn-admin btn-admin-secondary" onclick="adminResetChallenge()">
+                    <i class="fas fa-rotate-right"></i> Chơi Lại Thử Thách (200k)
                 </button>
             </div>
             <div class="admin-btn-row">
@@ -1144,14 +874,14 @@
                     <i class="fas fa-wallet"></i> Đặt Lại Ví 35k
                 </button>
                 <button type="button" class="btn-admin btn-admin-secondary" onclick="resetDefaultBank()">
-                    <i class="fas fa-rotate-left"></i> Khôi Phục 100 Câu Gốc
+                    <i class="fas fa-database"></i> Khôi Phục 100 Câu Gốc
                 </button>
             </div>
         </div>
     </div>
 
     <!-- ==========================================
-         MODAL 5: GÓC HƯ HỎNG (DARK MODE OVERLAY)
+         MODAL 3: GÓC HƯ HỎNG (DARK MODE OVERLAY)
          ========================================== -->
     <div class="dark-overlay" id="huHongOverlay">
         <div class="dark-box">
@@ -1183,146 +913,132 @@
         const TELEGRAM_BOT_TOKEN = '8741437914:AAHZjk0SvWDeaAK3D8DPgp0Uke08ZVNd_g4';
         const TELEGRAM_CHAT_ID = '8511070091';
 
-        // Key lưu trữ mới (bắt đầu sạch từ 35.000đ, không bị dính số dư cũ)
-        const STORAGE_KEY = 'beNgoanData_v2_35k';
-        const BANK_STORAGE_KEY = 'beNgoanBank_v2_100';
+        const STORAGE_KEY = 'beNgoanMarathon100_v1';
+        const BANK_STORAGE_KEY = 'beNgoanBank100_v3';
         const INITIAL_BALANCE = 35000;
+        const INITIAL_PRIZE_POOL = 200000;
         const QUIZ_DURATION_SEC = 30;
         const PENALTY_AMOUNT = 5000;
-        const DAILY_BAG_COUNT = 8;
 
-        // 12 ô thưởng trên vòng quay (1k - 20k)
-        const WHEEL_PRIZES = [1000, 10000, 2000, 15000, 3000, 8000, 5000, 20000, 4000, 12000, 6000, 18000];
-        // Trọng số xác suất tương ứng 12 ô (tổng = 100%):
-        // <= 10k chiếm 80% (1k:13, 10k:6, 2k:13, 3k:12, 8k:7, 5k:10, 4k:11, 6k:8)
-        // > 10k chiếm đúng 20% (12k:8, 15k:6, 18k:4, 20k:2)
-        const WHEEL_WEIGHTS = [13, 6, 13, 6, 12, 7, 10, 2, 11, 8, 8, 4];
-        const WHEEL_COLORS = [
-            '#ffd6e0', '#c7ceea', '#ffdac1', '#b5ead7',
-            '#fbc2eb', '#a0c4ff', '#ffe5ec', '#ffd166',
-            '#e2f0cb', '#cdb4db', '#ffcfd2', '#9bf6ff'
-        ];
-
-        // Thông tin hiển thị 4 chủ đề chính + chủ đề tự thêm
         const CATEGORY_META = {
-            chinese: { name: 'Tiếng Trung 🇨🇳', icon: 'fa-language', cls: 'cat-chinese' },
-            cooking: { name: 'Nấu Ăn 🍳', icon: 'fa-utensils', cls: 'cat-cooking' },
-            plant:   { name: 'Trồng Cây 🌱', icon: 'fa-seedling', cls: 'cat-plant' },
-            edu18:   { name: '18+ & Giới Tính 💋', icon: 'fa-heart', cls: 'cat-edu18' },
-            custom:  { name: 'Bí Ẩn ✨', icon: 'fa-star', cls: 'cat-custom' }
+            hsk2:   { name: 'Tiếng Trung HSK2 🇨🇳', icon: 'fa-language', cls: 'cat-hsk2' },
+            math:   { name: 'Toán & Logic 🧮', icon: 'fa-calculator', cls: 'cat-math' },
+            spell:  { name: 'Chính Tả Tiếng Việt ✍️', icon: 'fa-pen-nib', cls: 'cat-spell' },
+            comm:   { name: 'Giao Tiếp Khôn Khéo 💬', icon: 'fa-comments', cls: 'cat-comm' },
+            custom: { name: 'Câu Hỏi Bổ Sung ✨', icon: 'fa-star', cls: 'cat-custom' }
         };
 
         // ==========================================
-        // KHO 100 CÂU HỎI CHÍNH THỨC (ĐÃ KIỂM TRA ĐÁP ÁN)
+        // BỘ 100 CÂU HỎI MỚI (HSK2 + TOÁN LOGIC + CHÍNH TẢ + GIAO TIẾP)
         // ==========================================
         const DEFAULT_QUESTION_BANK = [
-            // --- PHẦN 1: TIẾNG TRUNG CƠ BẢN (25 câu) ---
-            { id: 'q1', cat: 'chinese', q: '"你好" (Nǐ hǎo) có nghĩa là gì?', opts: ['Tạm biệt', 'Xin chào', 'Cảm ơn', 'Xin lỗi'], ans: 1 },
-            { id: 'q2', cat: 'chinese', q: '"谢谢" (Xièxie) nghĩa là gì?', opts: ['Cảm ơn', 'Xin chào', 'Không có gì', 'Tạm biệt'], ans: 0 },
-            { id: 'q3', cat: 'chinese', q: '"我爱你" (Wǒ ài nǐ) có nghĩa là gì?', opts: ['Tôi nhớ bạn', 'Tôi thích ăn', 'Tôi yêu bạn', 'Tôi ghét bạn'], ans: 2 },
-            { id: 'q4', cat: 'chinese', q: '"再见" (Zàijiàn) dùng khi nào?', opts: ['Khi chào buổi sáng', 'Khi cảm ơn', 'Khi xin lỗi', 'Khi tạm biệt'], ans: 3 },
-            { id: 'q5', cat: 'chinese', q: '"你叫什么名字?" nghĩa là gì?', opts: ['Bạn bao nhiêu tuổi?', 'Bạn tên gì?', 'Bạn sống ở đâu?', 'Bạn đang làm gì?'], ans: 1 },
-            { id: 'q6', cat: 'chinese', q: '"我" (Wǒ) nghĩa là gì?', opts: ['Tôi', 'Bạn', 'Anh ấy', 'Chúng tôi'], ans: 0 },
-            { id: 'q7', cat: 'chinese', q: '"你" (Nǐ) nghĩa là gì?', opts: ['Tôi', 'Bạn', 'Cô ấy', 'Họ'], ans: 1 },
-            { id: 'q8', cat: 'chinese', q: '"妈妈" (Māma) là ai?', opts: ['Bố', 'Anh trai', 'Mẹ', 'Em gái'], ans: 2 },
-            { id: 'q9', cat: 'chinese', q: '"爸爸" (Bàba) nghĩa là gì?', opts: ['Bố', 'Mẹ', 'Ông', 'Bà'], ans: 0 },
-            { id: 'q10', cat: 'chinese', q: '"吃饭" (Chīfàn) nghĩa là gì?', opts: ['Đi ngủ', 'Đi chơi', 'Đi làm', 'Ăn cơm'], ans: 3 },
-            { id: 'q11', cat: 'chinese', q: '"喝水" (Hē shuǐ) nghĩa là gì?', opts: ['Uống nước', 'Ăn cơm', 'Tắm rửa', 'Đi ngủ'], ans: 0 },
-            { id: 'q12', cat: 'chinese', q: '"漂亮" (Piàoliang) có nghĩa là gì?', opts: ['Xấu xí', 'Đẹp', 'Cao', 'Thấp'], ans: 1 },
-            { id: 'q13', cat: 'chinese', q: '"可爱" (Kě\'ài) nghĩa là gì?', opts: ['Đáng yêu', 'Đáng ghét', 'Thông minh', 'Nóng tính'], ans: 0 },
-            { id: 'q14', cat: 'chinese', q: '"今天" (Jīntiān) là ngày nào?', opts: ['Hôm qua', 'Ngày mai', 'Hôm nay', 'Cuối tuần'], ans: 2 },
-            { id: 'q15', cat: 'chinese', q: '"明天" (Míngtiān) nghĩa là gì?', opts: ['Hôm qua', 'Hôm nay', 'Buổi tối', 'Ngày mai'], ans: 3 },
-            { id: 'q16', cat: 'chinese', q: '"多少钱?" (Duōshao qián?) thường dùng để hỏi gì?', opts: ['Mấy giờ?', 'Bao nhiêu tiền?', 'Bao nhiêu tuổi?', 'Đi đâu?'], ans: 1 },
-            { id: 'q17', cat: 'chinese', q: '"再来一杯" có nghĩa là gì?', opts: ['Cho thêm một cốc nữa', 'Không uống nữa', 'Tính tiền', 'Tôi không thích'], ans: 0 },
-            { id: 'q18', cat: 'chinese', q: '"我饿了" nghĩa là gì?', opts: ['Tôi buồn ngủ', 'Tôi khát nước', 'Tôi đói rồi', 'Tôi no rồi'], ans: 2 },
-            { id: 'q19', cat: 'chinese', q: '"我累了" nghĩa là gì?', opts: ['Tôi vui rồi', 'Tôi mệt rồi', 'Tôi đói rồi', 'Tôi khỏe rồi'], ans: 1 },
-            { id: 'q20', cat: 'chinese', q: '"没关系" (Méi guānxi) nghĩa là gì?', opts: ['Không sao đâu', 'Không thích', 'Không biết', 'Không được'], ans: 0 },
-            { id: 'q21', cat: 'chinese', q: 'Số "一" (Yī) là số mấy?', opts: ['Hai', 'Ba', 'Một', 'Bốn'], ans: 2 },
-            { id: 'q22', cat: 'chinese', q: 'Số "八" (Bā) là số mấy?', opts: ['Sáu', 'Bảy', 'Chín', 'Tám'], ans: 3 },
-            { id: 'q23', cat: 'chinese', q: '"狗" (Gǒu) là con gì?', opts: ['Mèo', 'Chó', 'Gà', 'Vịt'], ans: 1 },
-            { id: 'q24', cat: 'chinese', q: '"猫" (Māo) là con gì?', opts: ['Mèo', 'Chó', 'Thỏ', 'Cá'], ans: 0 },
-            { id: 'q25', cat: 'chinese', q: 'Nếu muốn nói "Bạn có yêu tôi không?" thì nói thế nào?', opts: ['你吃饭了吗？', '你好吗？', '你爱我吗？', '你去哪儿？'], ans: 2 },
+            // --- PHẦN 1: TIẾNG TRUNG HSK2 (25 CÂU) ---
+            { id: 'q1', cat: 'hsk2', q: 'Từ “漂亮” có nghĩa là gì?', opts: ['Thông minh', 'Xinh đẹp', 'Nhanh chóng', 'Vui vẻ'], ans: 1 },
+            { id: 'q2', cat: 'hsk2', q: '“你叫什么名字？” có nghĩa là gì?', opts: ['Bạn bao nhiêu tuổi?', 'Bạn đang ở đâu?', 'Bạn tên là gì?', 'Bạn làm nghề gì?'], ans: 2 },
+            { id: 'q3', cat: 'hsk2', q: 'Chọn từ thích hợp điền vào chỗ trống: 我每天七点___起床。', opts: ['才', '就', '在', '很'], ans: 1 },
+            { id: 'q4', cat: 'hsk2', q: '“昨天” có nghĩa là gì?', opts: ['Hôm nay', 'Ngày mai', 'Hôm qua', 'Tuần sau'], ans: 2 },
+            { id: 'q5', cat: 'hsk2', q: 'Từ nào có nghĩa là “bởi vì”?', opts: ['所以', '但是', '因为', '如果'], ans: 2 },
+            { id: 'q6', cat: 'hsk2', q: 'Chọn câu đúng ngữ pháp:', opts: ['我喜欢喝茶。', '我喝喜欢茶。', '喜欢我茶喝。', '茶我喝喜欢。'], ans: 0 },
+            { id: 'q7', cat: 'hsk2', q: '“医院” có nghĩa là gì?', opts: ['Trường học', 'Bệnh viện', 'Nhà hàng', 'Siêu thị'], ans: 1 },
+            { id: 'q8', cat: 'hsk2', q: 'Điền từ thích hợp: 你___去哪儿？', opts: ['想', '是', '有', '在'], ans: 0 },
+            { id: 'q9', cat: 'hsk2', q: '“便宜” có nghĩa là gì?', opts: ['Đắt', 'Rẻ', 'Đẹp', 'Xa'], ans: 1 },
+            { id: 'q10', cat: 'hsk2', q: 'Số “三十五” là số nào?', opts: ['25', '30', '35', '45'], ans: 2 },
+            { id: 'q11', cat: 'hsk2', q: '“我比他高” có nghĩa là gì?', opts: ['Tôi thấp hơn anh ấy.', 'Tôi cao hơn anh ấy.', 'Tôi bằng chiều cao anh ấy.', 'Anh ấy cao hơn tôi.'], ans: 1 },
+            { id: 'q12', cat: 'hsk2', q: 'Từ nào có nghĩa là “thời tiết”?', opts: ['天气', '时间', '天空', '事情'], ans: 0 },
+            { id: 'q13', cat: 'hsk2', q: 'Chọn từ thích hợp: 今天太热了，我想喝___。', opts: ['面包', '水', '米饭', '苹果'], ans: 1 },
+            { id: 'q14', cat: 'hsk2', q: '“正在” thường được sử dụng để diễn tả điều gì?', opts: ['Hành động đã kết thúc', 'Hành động đang diễn ra', 'Hành động trong tương lai xa', 'Hành động chưa từng xảy ra'], ans: 1 },
+            { id: 'q15', cat: 'hsk2', q: '“你为什么不来？” có nghĩa là gì?', opts: ['Bạn đến lúc nào?', 'Bạn đi đâu?', 'Tại sao bạn không đến?', 'Bạn có muốn đến không?'], ans: 2 },
+            { id: 'q16', cat: 'hsk2', q: 'Chọn từ thích hợp: 他___会说汉语，也会说英语。', opts: ['不但', '虽然', '因为', '如果'], ans: 0 },
+            { id: 'q17', cat: 'hsk2', q: '“考试” có nghĩa là gì?', opts: ['Bài tập', 'Kỳ thi', 'Nghỉ học', 'Bài giảng'], ans: 1 },
+            { id: 'q18', cat: 'hsk2', q: 'Câu nào có nghĩa là “Tôi đã ăn cơm rồi”?', opts: ['我吃饭了。', '我吃饭吗？', '我不吃饭。', '我想吃饭。'], ans: 0 },
+            { id: 'q19', cat: 'hsk2', q: '“离学校很远” có nghĩa là gì?', opts: ['Rất gần trường học', 'Rất xa trường học', 'Ở trong trường học', 'Phía sau trường học'], ans: 1 },
+            { id: 'q20', cat: 'hsk2', q: 'Điền từ thích hợp: 你每天几点___睡觉？', opts: ['做', '去', '睡', '有'], ans: 1 },
+            { id: 'q21', cat: 'hsk2', q: '“认识” có nghĩa là gì?', opts: ['Quen biết', 'Chia tay', 'Tạm biệt', 'Nghỉ ngơi'], ans: 0 },
+            { id: 'q22', cat: 'hsk2', q: 'Chọn câu có nghĩa “Tôi đã học tiếng Trung được hai năm”.', opts: ['我学习汉语两年了。', '我汉语学习两天。', '我学习两年汉语吗？', '我两年不学习汉语。'], ans: 0 },
+            { id: 'q23', cat: 'hsk2', q: '“从来” thường mang nghĩa gì?', opts: ['Thỉnh thoảng', 'Luôn luôn / từ trước đến nay', 'Ngày mai', 'Ngay lập tức'], ans: 1 },
+            { id: 'q24', cat: 'hsk2', q: 'Chọn từ thích hợp: 这件衣服很漂亮，___有点儿贵。', opts: ['所以', '但是', '因为', '或者'], ans: 1 },
+            { id: 'q25', cat: 'hsk2', q: '“希望你身体健康” có nghĩa là gì?', opts: ['Chúc bạn học giỏi.', 'Chúc bạn thành công.', 'Mong bạn khỏe mạnh.', 'Chúc bạn vui vẻ.'], ans: 2 },
 
-            // --- PHẦN 2: NẤU ĂN (25 câu) ---
-            { id: 'q26', cat: 'cooking', q: 'Luộc trứng gà khoảng bao lâu để lòng đỏ chín hoàn toàn?', opts: ['1–2 phút', '5 phút', '9–12 phút', '30 phút'], ans: 2 },
-            { id: 'q27', cat: 'cooking', q: 'Muốn chiên trứng không bị dính chảo, nên làm gì?', opts: ['Để chảo nóng vừa và cho dầu ăn', 'Không cho dầu', 'Đổ nước vào chảo', 'Cho trứng vào chảo lạnh rồi bật lửa lớn'], ans: 0 },
-            { id: 'q28', cat: 'cooking', q: 'Loại gia vị nào thường dùng để tạo vị mặn trong món ăn Việt Nam?', opts: ['Đường', 'Nước mắm', 'Giấm', 'Mật ong'], ans: 1 },
-            { id: 'q29', cat: 'cooking', q: 'Khi nấu cơm bằng nồi cơm điện, cần làm gì trước tiên?', opts: ['Cho gạo khô vào nồi', 'Cho dầu ăn', 'Vo gạo và thêm lượng nước phù hợp', 'Bật nút nấu ngay khi chưa có gạo'], ans: 2 },
-            { id: 'q30', cat: 'cooking', q: 'Muốn làm món trứng chiên, nguyên liệu chính là gì?', opts: ['Trứng gà', 'Thịt bò', 'Cá', 'Khoai tây'], ans: 0 },
-            { id: 'q31', cat: 'cooking', q: 'Rau muống thường được chế biến thành món gì?', opts: ['Rau muống luộc', 'Kem rau muống', 'Bánh rau muống', 'Chè rau muống'], ans: 0 },
-            { id: 'q32', cat: 'cooking', q: 'Khi thái hành tây, tại sao nhiều người bị cay mắt?', opts: ['Vì hành quá lạnh', 'Vì hành tiết ra hợp chất gây kích ứng mắt', 'Vì hành có vị ngọt', 'Vì dao quá sắc'], ans: 1 },
-            { id: 'q33', cat: 'cooking', q: 'Muốn thịt bò xào mềm, thường nên làm gì?', opts: ['Xào quá lâu', 'Để lửa nhỏ trong 2 tiếng', 'Thái mỏng và xào nhanh', 'Không cần nấu chín'], ans: 2 },
-            { id: 'q34', cat: 'cooking', q: 'Món phở truyền thống thường ăn cùng loại rau nào?', opts: ['Rau thơm, hành lá', 'Rau cải muối chua', 'Lá bạc hà khô', 'Rau ngót sống'], ans: 0 },
-            { id: 'q35', cat: 'cooking', q: 'Khi nấu canh bị mặn, có thể xử lý bằng cách nào?', opts: ['Cho thêm nước phù hợp', 'Cho thêm muối', 'Đun cạn nước', 'Cho thêm nước mắm'], ans: 0 },
-            { id: 'q36', cat: 'cooking', q: 'Nguyên liệu chính để làm món đậu phụ là gì?', opts: ['Gạo', 'Đậu nành', 'Khoai lang', 'Ngô'], ans: 1 },
-            { id: 'q37', cat: 'cooking', q: 'Món nào dưới đây thường được ăn vào bữa sáng?', opts: ['Phở', 'Bánh mì', 'Bún', 'Cả ba đáp án trên'], ans: 3 },
-            { id: 'q38', cat: 'cooking', q: 'Muốn làm nước chấm chua ngọt thường cần gì?', opts: ['Nước mắm, đường, chanh hoặc giấm', 'Muối và dầu ăn', 'Sữa và bơ', 'Nước lọc và tiêu'], ans: 0 },
-            { id: 'q39', cat: 'cooking', q: 'Khi chiên cá, để cá ít bị nát nên làm gì?', opts: ['Lật liên tục', 'Đợi một mặt vàng rồi mới lật', 'Đổ thật nhiều nước', 'Không cần làm sạch cá'], ans: 1 },
-            { id: 'q40', cat: 'cooking', q: 'Loại thực phẩm nào cần bảo quản trong tủ lạnh để tránh hỏng nhanh?', opts: ['Thịt tươi', 'Cá tươi', 'Sữa tươi cần bảo quản lạnh', 'Cả ba đáp án trên'], ans: 3 },
-            { id: 'q41', cat: 'cooking', q: 'Muốn làm món khoai tây chiên, nguyên liệu chính là gì?', opts: ['Khoai lang', 'Khoai tây', 'Củ cải', 'Cà rốt'], ans: 1 },
-            { id: 'q42', cat: 'cooking', q: 'Khi nấu mì gói, nên cho mì vào lúc nào?', opts: ['Khi nước đã sôi', 'Khi nước còn lạnh và chưa bật bếp', 'Sau khi tắt bếp 30 phút', 'Không cần nước'], ans: 0 },
-            { id: 'q43', cat: 'cooking', q: 'Loại gia vị nào tạo vị cay?', opts: ['Đường', 'Muối', 'Ớt', 'Bột ngọt'], ans: 2 },
-            { id: 'q44', cat: 'cooking', q: 'Muốn thịt gà luộc chín đều, nên làm gì?', opts: ['Luộc với thời gian phù hợp tùy kích thước miếng gà', 'Chỉ trụng qua nước sôi', 'Để gà sống rồi ăn', 'Chiên sơ rồi bỏ ra'], ans: 0 },
-            { id: 'q45', cat: 'cooking', q: 'Món sushi nổi tiếng có nguồn gốc từ nước nào?', opts: ['Việt Nam', 'Nhật Bản', 'Hàn Quốc', 'Thái Lan'], ans: 1 },
-            { id: 'q46', cat: 'cooking', q: 'Khi làm bánh, nguyên liệu nào giúp bánh có độ nở trong nhiều công thức?', opts: ['Bột nở', 'Nước mắm', 'Tiêu', 'Muối ớt'], ans: 0 },
-            { id: 'q47', cat: 'cooking', q: 'Nấu cháo thường cần nhiều nước hơn nấu cơm hay không?', opts: ['Có', 'Không', 'Luôn bằng nhau', 'Không cần nước'], ans: 0 },
-            { id: 'q48', cat: 'cooking', q: 'Khi dầu ăn đang bốc cháy trong chảo, tuyệt đối không nên làm gì?', opts: ['Tắt bếp nếu an toàn', 'Đậy nắp kim loại phù hợp để ngạt lửa', 'Đổ nước vào chảo dầu đang cháy', 'Dùng bình chữa cháy phù hợp'], ans: 2 },
-            { id: 'q49', cat: 'cooking', q: 'Món nào thường có nguyên liệu chính là thịt heo và trứng?', opts: ['Thịt kho trứng', 'Canh chua cá', 'Gỏi cuốn chay', 'Salad trái cây'], ans: 0 },
-            { id: 'q50', cat: 'cooking', q: 'Nếu bạn gái nấu ăn ngon, bạn nên làm gì?', opts: ['Khen cô ấy', 'Ăn hết phần của cô ấy', 'Phụ rửa bát', 'Cả A và C'], ans: 3 },
+            // --- PHẦN 2: TOÁN TÍNH NHẨM & LOGIC CẤP 2 (25 CÂU - ĐÃ CHUẨN HÓA ĐÁP ÁN TOÁN HỌC) ---
+            { id: 'q26', cat: 'math', q: 'Tính nhanh: 25 × 16 = ?', opts: ['300', '350', '400', '450'], ans: 2 },
+            { id: 'q27', cat: 'math', q: 'Một số khi nhân với 5 rồi cộng thêm 10 thì bằng 60. Số đó là bao nhiêu?', opts: ['8', '10', '12', '15'], ans: 1 },
+            { id: 'q28', cat: 'math', q: 'Dãy số: 2, 6, 12, 20, 30, ... Số tiếp theo là?', opts: ['36', '40', '42', '44'], ans: 2 },
+            { id: 'q29', cat: 'math', q: 'Nếu hôm nay là thứ Ba thì 100 ngày nữa là thứ mấy?', opts: ['Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Chủ nhật'], ans: 1 },
+            { id: 'q30', cat: 'math', q: '15% của 200 bằng bao nhiêu?', opts: ['20', '25', '30', '35'], ans: 2 },
+            { id: 'q31', cat: 'math', q: 'Một chiếc áo giá 200.000 đồng, giảm 20%. Giá sau khi giảm là?', opts: ['140.000 đồng', '150.000 đồng', '160.000 đồng', '180.000 đồng'], ans: 2 },
+            { id: 'q32', cat: 'math', q: 'Có 5 máy làm ra 5 sản phẩm trong 5 phút. Vậy 10 máy làm ra 10 sản phẩm trong bao lâu?', opts: ['2,5 phút', '5 phút', '10 phút', '15 phút'], ans: 1 },
+            { id: 'q33', cat: 'math', q: 'Tính: 48 ÷ 6 × 2 + 5 = ?', opts: ['13', '16', '21', '25'], ans: 2 },
+            { id: 'q34', cat: 'math', q: 'Một người có 100.000 đồng, mua 3 quyển vở giá 12.000 đồng/quyển và 2 cây bút giá 8.000 đồng/cây. Còn lại bao nhiêu?', opts: ['48.000 đồng', '52.000 đồng', '56.000 đồng', '60.000 đồng'], ans: 1 },
+            { id: 'q35', cat: 'math', q: 'Số nào khác với các số còn lại?', opts: ['16', '25', '36', '50'], ans: 3 },
+            { id: 'q36', cat: 'math', q: 'Một hình chữ nhật có chiều dài 12 cm, chiều rộng 5 cm. Chu vi là?', opts: ['17 cm', '30 cm', '34 cm', '60 cm'], ans: 2 },
+            { id: 'q37', cat: 'math', q: 'Tổng tuổi của hai anh em là 30. Anh hơn em 6 tuổi. Tuổi người em là?', opts: ['10', '12', '15', '18'], ans: 1 },
+            { id: 'q38', cat: 'math', q: 'Tính nhanh: 99 × 99 = ?', opts: ['9.801', '9.900', '9.901', '9.999'], ans: 0 },
+            { id: 'q39', cat: 'math', q: 'Một chiếc đồng hồ chỉ 3 giờ 15 phút. Góc nhỏ giữa kim giờ và kim phút là bao nhiêu?', opts: ['0°', '7,5°', '15°', '30°'], ans: 1 },
+            { id: 'q40', cat: 'math', q: 'Một người đi 60 km trong 1,5 giờ. Vận tốc trung bình là?', opts: ['30 km/h', '40 km/h', '45 km/h', '60 km/h'], ans: 1 },
+            { id: 'q41', cat: 'math', q: 'Dãy số: 1, 1, 2, 3, 5, 8, ... Số tiếp theo là?', opts: ['10', '11', '13', '15'], ans: 2 },
+            { id: 'q42', cat: 'math', q: 'Có 3 hộp, mỗi hộp có 4 quả táo. Lấy đi 5 quả. Còn lại bao nhiêu quả?', opts: ['5', '7', '8', '9'], ans: 1 },
+            { id: 'q43', cat: 'math', q: 'Nếu x + 7 = 19 thì 2x bằng bao nhiêu?', opts: ['12', '19', '24', '26'], ans: 2 },
+            { id: 'q44', cat: 'math', q: 'Một số chia cho 3 dư 2. Số nào sau đây thỏa mãn?', opts: ['12', '14', '15', '18'], ans: 1 },
+            { id: 'q45', cat: 'math', q: 'Trong một lớp có 40 học sinh, 60% là nữ. Số học sinh nam là?', opts: ['12', '16', '20', '24'], ans: 1 },
+            { id: 'q46', cat: 'math', q: 'Một con ốc sên leo lên cột cao 10 m. Ban ngày leo 3 m, ban đêm tụt xuống 2 m. Hỏi sau bao nhiêu ngày ốc sên lên tới đỉnh?', opts: ['6 ngày', '7 ngày', '8 ngày', '10 ngày'], ans: 2 },
+            { id: 'q47', cat: 'math', q: '1 kg bông và 1 kg sắt, vật nào nặng hơn?', opts: ['Bông', 'Sắt', 'Nặng bằng nhau', 'Không thể xác định'], ans: 2 },
+            { id: 'q48', cat: 'math', q: 'Tính: 2 + 4 × 3 - 6 ÷ 2 = ?', opts: ['9', '10', '11', '12'], ans: 2 },
+            { id: 'q49', cat: 'math', q: 'Một số có hai chữ số, tổng hai chữ số bằng 9. Chữ số hàng chục lớn hơn hàng đơn vị 3 đơn vị. Số đó là?', opts: ['36', '45', '54', '63'], ans: 3 },
+            { id: 'q50', cat: 'math', q: 'Một người có 4 chiếc áo và 3 chiếc quần. Nếu mỗi áo kết hợp với mỗi quần thành một bộ khác nhau, có bao nhiêu cách phối?', opts: ['7', '10', '12', '14'], ans: 2 },
 
-            // --- PHẦN 3: TRỒNG CÂY (25 câu) ---
-            { id: 'q51', cat: 'plant', q: 'Cây xanh cần gì để quang hợp?', opts: ['Ánh sáng', 'Nước', 'Khí CO₂', 'Cả ba đáp án trên'], ans: 3 },
-            { id: 'q52', cat: 'plant', q: 'Bộ phận nào của cây thường hút nước từ đất?', opts: ['Lá', 'Rễ', 'Hoa', 'Quả'], ans: 1 },
-            { id: 'q53', cat: 'plant', q: 'Cây xương rồng có đặc điểm gì?', opts: ['Cần tưới nước liên tục', 'Có khả năng chịu hạn tốt', 'Không cần ánh sáng', 'Không có rễ'], ans: 1 },
-            { id: 'q54', cat: 'plant', q: 'Thời điểm nào thường thích hợp để tưới cây ngoài trời?', opts: ['Sáng sớm', 'Giữa trưa nắng gắt', 'Bất cứ lúc nào cũng giống nhau', 'Khi trời nắng nóng nhất'], ans: 0 },
-            { id: 'q55', cat: 'plant', q: 'Nếu lá cây chuyển sang màu vàng, nguyên nhân có thể là gì?', opts: ['Tưới quá nhiều nước', 'Thiếu dinh dưỡng', 'Thiếu ánh sáng', 'Cả ba đáp án trên'], ans: 3 },
-            { id: 'q56', cat: 'plant', q: 'Loại đất nào thường được dùng để trồng cây?', opts: ['Đất trồng tơi xốp', 'Cát xây dựng khô hoàn toàn', 'Xi măng', 'Đá nguyên khối'], ans: 0 },
-            { id: 'q57', cat: 'plant', q: 'Cây hoa hướng dương thường có đặc điểm gì?', opts: ['Hoa lớn màu vàng', 'Hoa màu đen', 'Không có hoa', 'Chỉ sống dưới nước'], ans: 0 },
-            { id: 'q58', cat: 'plant', q: 'Cây nào dưới đây thường được trồng trong nhà?', opts: ['Trầu bà', 'Cây lúa nước', 'Cây ngô đồng ruộng', 'Cây dừa biển'], ans: 0 },
-            { id: 'q59', cat: 'plant', q: 'Tưới quá nhiều nước cho cây có thể gây ra điều gì?', opts: ['Rễ bị úng', 'Cây lớn nhanh gấp 10 lần', 'Cây tự ra hoa ngay', 'Không ảnh hưởng gì'], ans: 0 },
-            { id: 'q60', cat: 'plant', q: 'Phân bón có tác dụng gì?', opts: ['Cung cấp chất dinh dưỡng cho cây', 'Làm cây không cần nước', 'Làm cây không cần ánh sáng', 'Thay thế hoàn toàn đất'], ans: 0 },
-            { id: 'q61', cat: 'plant', q: 'Loài cây nào thường được trồng để lấy quả?', opts: ['Cây xoài', 'Cây hoa hồng', 'Cây xương rồng cảnh', 'Cây dương xỉ'], ans: 0 },
-            { id: 'q62', cat: 'plant', q: 'Cây bạc hà có thể dùng để làm gì?', opts: ['Pha trà', 'Tạo hương thơm cho món ăn', 'Làm đồ uống', 'Cả ba đáp án trên'], ans: 3 },
-            { id: 'q63', cat: 'plant', q: 'Vì sao nên có lỗ thoát nước ở đáy chậu?', opts: ['Để rễ cây không bị ngập úng', 'Để đất rơi ra ngoài', 'Để cây không cần tưới nước', 'Để cây không phát triển'], ans: 0 },
-            { id: 'q64', cat: 'plant', q: 'Cây nào thường có gai?', opts: ['Hoa hồng', 'Rau cải', 'Cây chuối', 'Cây lúa'], ans: 0 },
-            { id: 'q65', cat: 'plant', q: 'Khi gieo hạt, nên làm gì?', opts: ['Vùi hạt ở độ sâu phù hợp với từng loại cây', 'Đổ thật nhiều nước ngập hạt', 'Để hạt trên nền xi măng', 'Không cần chăm sóc'], ans: 0 },
-            { id: 'q66', cat: 'plant', q: 'Cây chuối thường sinh sản bằng cách nào?', opts: ['Chồi con mọc từ thân ngầm', 'Chỉ bằng lá', 'Chỉ bằng hoa', 'Không sinh sản'], ans: 0 },
-            { id: 'q67', cat: 'plant', q: 'Loại cây nào thường được dùng làm gia vị?', opts: ['Húng quế', 'Cây bàng', 'Cây thông', 'Cây phượng'], ans: 0 },
-            { id: 'q68', cat: 'plant', q: 'Nếu thấy sâu ăn lá, bạn nên làm gì?', opts: ['Kiểm tra và xử lý sâu phù hợp', 'Tưới nước thật nhiều', 'Nhổ bỏ tất cả cây', 'Đổ nước ngọt vào chậu'], ans: 0 },
-            { id: 'q69', cat: 'plant', q: 'Hoa sen thường mọc ở đâu?', opts: ['Dưới nước hoặc vùng bùn nước', 'Trên sa mạc', 'Trên núi đá khô', 'Trên thân cây thông'], ans: 0 },
-            { id: 'q70', cat: 'plant', q: 'Cây cà chua thường cho ra bộ phận nào để thu hoạch?', opts: ['Quả', 'Rễ', 'Thân', 'Gai'], ans: 0 },
-            { id: 'q71', cat: 'plant', q: 'Khi cây bị héo do thiếu nước, nên làm gì?', opts: ['Tưới nước vừa đủ', 'Bón thật nhiều phân ngay', 'Để cây ngoài nắng gắt hơn', 'Cắt hết rễ'], ans: 0 },
-            { id: 'q72', cat: 'plant', q: 'Cây nào có thể trồng bằng cách giâm cành?', opts: ['Hoa hồng', 'Cây lúa', 'Cây ngô', 'Cây dừa'], ans: 0 },
-            { id: 'q73', cat: 'plant', q: 'Vì sao cần cắt tỉa lá và cành khô?', opts: ['Giúp cây gọn gàng và hạn chế nơi trú ngụ của sâu bệnh', 'Làm cây không cần nước', 'Làm cây ngừng phát triển', 'Làm cây chết nhanh'], ans: 0 },
-            { id: 'q74', cat: 'plant', q: 'Loại cây nào thường được trồng để làm cảnh và lọc bụi trong không gian?', opts: ['Cây lưỡi hổ', 'Cây rau muống', 'Cây lúa', 'Cây ngô'], ans: 0 },
-            { id: 'q75', cat: 'plant', q: 'Nếu bạn gái tặng bạn một chậu cây, bạn nên làm gì?', opts: ['Chăm sóc nó thật tốt', 'Để nó tự sinh tồn', 'Quên tưới nước', 'Mang cho người khác ngay'], ans: 0 },
+            // --- PHẦN 3: CHÍNH TẢ TIẾNG VIỆT (25 CÂU) ---
+            { id: 'q51', cat: 'spell', q: 'Từ nào viết đúng chính tả?', opts: ['Chỉnh chu', 'Chỉn chu', 'Chỉnh trụ', 'Chỉn trụ'], ans: 1 },
+            { id: 'q52', cat: 'spell', q: 'Từ nào viết đúng?', opts: ['Xúc tích', 'Súc tích', 'Xúc tịch', 'Súc tịch'], ans: 1 },
+            { id: 'q53', cat: 'spell', q: 'Chọn từ đúng:', opts: ['Sát nhập', 'Sáp nhập', 'Sát nhâp', 'Sáp nhâp'], ans: 1 },
+            { id: 'q54', cat: 'spell', q: 'Từ nào đúng chính tả?', opts: ['Chân thành', 'Trân thành', 'Chân thàng', 'Trân thàng'], ans: 0 },
+            { id: 'q55', cat: 'spell', q: 'Chọn cách viết đúng:', opts: ['Dành dụm', 'Giành dụm', 'Rành dụm', 'Dành giụm'], ans: 0 },
+            { id: 'q56', cat: 'spell', q: 'Từ nào viết đúng?', opts: ['Suôn sẻ', 'Xuôn sẻ', 'Suông xẻ', 'Xuông xẻ'], ans: 0 },
+            { id: 'q57', cat: 'spell', q: 'Chọn từ đúng:', opts: ['Bàng quang', 'Bàng quan', 'Bàn quang', 'Bàn quan'], ans: 0 },
+            { id: 'q58', cat: 'spell', q: 'Từ nào có nghĩa là thái độ không quan tâm, đứng ngoài cuộc?', opts: ['Bàng quang', 'Bàng quan', 'Bàng quẻ', 'Bàn quan'], ans: 1 },
+            { id: 'q59', cat: 'spell', q: 'Chọn từ viết đúng:', opts: ['Vô hình chung', 'Vô hình trung', 'Vô hình chungg', 'Vô hình trun'], ans: 1 },
+            { id: 'q60', cat: 'spell', q: 'Từ nào đúng chính tả?', opts: ['Chín mùi', 'Chín muồi', 'Chính muồi', 'Chính mùi'], ans: 1 },
+            { id: 'q61', cat: 'spell', q: 'Chọn từ đúng:', opts: ['Trải nhiệm', 'Trãi nghiệm', 'Trải nghiệm', 'Trãi nhiệm'], ans: 2 },
+            { id: 'q62', cat: 'spell', q: 'Từ nào viết đúng?', opts: ['Cọ sát', 'Cọ xát', 'Cọ sác', 'Cọ sátch'], ans: 1 },
+            { id: 'q63', cat: 'spell', q: 'Chọn cách viết đúng:', opts: ['Ngành nghề', 'Ngành nghê', 'Nghành nghề', 'Nghành nghê'], ans: 0 },
+            { id: 'q64', cat: 'spell', q: 'Từ nào viết đúng chính tả?', opts: ['Lãng mạng', 'Lãng mạn', 'Lãn mạn', 'Lãn mạng'], ans: 1 },
+            { id: 'q65', cat: 'spell', q: 'Chọn từ đúng:', opts: ['Dư giả', 'Dư dả', 'Dư dã', 'Dư giã'], ans: 1 },
+            { id: 'q66', cat: 'spell', q: 'Từ nào viết đúng?', opts: ['Khuyến mãi', 'Khuyến mại', 'Cả A và B đều được sử dụng đúng', 'Khuyến mải'], ans: 2 },
+            { id: 'q67', cat: 'spell', q: 'Chọn từ đúng:', opts: ['Chẩn đoán', 'Chuẩn đoán', 'Chẩn đoáng', 'Chuẩn đoáng'], ans: 0 },
+            { id: 'q68', cat: 'spell', q: 'Từ nào đúng chính tả?', opts: ['Sơ xuất', 'Sơ suất', 'Sơ suốt', 'Sơ xuấc'], ans: 1 },
+            { id: 'q69', cat: 'spell', q: 'Chọn từ đúng:', opts: ['Đường xá', 'Đường sá', 'Cả A và B đều đúng', 'Đường sả'], ans: 2 },
+            { id: 'q70', cat: 'spell', q: 'Từ nào viết đúng?', opts: ['Giả thuyết', 'Giã thuyết', 'Dã thuyết', 'Giả thuyêt'], ans: 0 },
+            { id: 'q71', cat: 'spell', q: 'Chọn cách viết đúng:', opts: ['Lạc quan', 'Lạt quan', 'Lạc quang', 'Lạt quang'], ans: 0 },
+            { id: 'q72', cat: 'spell', q: 'Từ nào viết đúng?', opts: ['Rốt cuộc', 'Rốt cục', 'Cả A và B đều được sử dụng', 'Rốt cụt'], ans: 2 },
+            { id: 'q73', cat: 'spell', q: 'Chọn từ đúng:', opts: ['Sáng lạng', 'Xán lạn', 'Sáng lạn', 'Xán lạng'], ans: 1 },
+            { id: 'q74', cat: 'spell', q: 'Từ nào viết đúng?', opts: ['Bất chợt', 'Bất trợt', 'Bất trợ', 'Bất chợtch'], ans: 0 },
+            { id: 'q75', cat: 'spell', q: 'Chọn từ đúng:', opts: ['Tham quan', 'Thăm quan', 'Tham quang', 'Thăm quang'], ans: 0 },
 
-            // --- PHẦN 4: 18+ & GIỚI TÍNH (25 câu - đã chuẩn hóa đáp án 91A, 92B, 93A) ---
-            { id: 'q76', cat: 'edu18', q: 'Bộ phận nào của cơ quan sinh dục nữ có nhiều đầu dây thần kinh cảm giác và đóng vai trò quan trọng trong khoái cảm tình dục?', opts: ['Âm vật', 'Tử cung', 'Buồng trứng', 'Ống dẫn trứng'], ans: 0 },
-            { id: 'q77', cat: 'edu18', q: 'Bộ phận nào của cơ quan sinh dục nam sản xuất tinh trùng?', opts: ['Tuyến tiền liệt', 'Tinh hoàn', 'Dương vật', 'Bàng quang'], ans: 1 },
-            { id: 'q78', cat: 'edu18', q: 'Tinh dịch được phóng ra chủ yếu qua bộ phận nào?', opts: ['Hậu môn', 'Niệu đạo', 'Ống dẫn mật', 'Ống dẫn trứng'], ans: 1 },
-            { id: 'q79', cat: 'edu18', q: 'Âm đạo và âm hộ có giống nhau không?', opts: ['Hoàn toàn giống nhau', 'Âm hộ là phần bên ngoài, âm đạo là ống cơ bên trong', 'Âm đạo nằm bên ngoài cơ thể', 'Âm hộ là một bộ phận của tử cung'], ans: 1 },
-            { id: 'q80', cat: 'edu18', q: 'Chức năng chính của bao quy đầu là gì?', opts: ['Sản xuất tinh trùng', 'Bảo vệ phần đầu dương vật', 'Sản xuất testosterone', 'Điều khiển sự cương cứng'], ans: 1 },
-            { id: 'q81', cat: 'edu18', q: 'Bộ phận nào của nam giới thường được gọi dân gian là "điểm G của nam"?', opts: ['Tuyến tiền liệt', 'Bàng quang', 'Tinh hoàn', 'Niệu đạo'], ans: 0 },
-            { id: 'q82', cat: 'edu18', q: 'Điểm G ở nữ thường được mô tả nằm ở đâu?', opts: ['Thành trước âm đạo', 'Bên trong tử cung', 'Buồng trứng', 'Cổ tử cung'], ans: 0 },
-            { id: 'q83', cat: 'edu18', q: 'Khi nam giới cương cứng, hiện tượng nào xảy ra?', opts: ['Máu tăng lưu lượng vào các mô cương của dương vật', 'Tinh hoàn ngừng hoạt động', 'Bàng quang co lại hoàn toàn', 'Tinh trùng lập tức được sản xuất'], ans: 0 },
-            { id: 'q84', cat: 'edu18', q: 'Chất bôi trơn tự nhiên ở nữ giới thường có tác dụng gì?', opts: ['Giảm ma sát khi quan hệ', 'Ngăn tuyệt đối việc mang thai', 'Tiêu diệt toàn bộ tinh trùng', 'Làm thay đổi nhóm máu'], ans: 0 },
-            { id: 'q85', cat: 'edu18', q: 'Cực khoái (orgasm) là gì?', opts: ['Trạng thái đạt đỉnh khoái cảm tình dục', 'Quá trình thụ thai', 'Hiện tượng rụng trứng', 'Hiện tượng kinh nguyệt'], ans: 0 },
-            { id: 'q86', cat: 'edu18', q: 'Một người phụ nữ có thể đạt cực khoái mà không cần thâm nhập âm đạo không?', opts: ['Không thể', 'Có thể', 'Chỉ khi mang thai', 'Chỉ sau khi sinh con'], ans: 1 },
-            { id: 'q87', cat: 'edu18', q: 'Quan hệ bằng miệng (oral sex) là gì?', opts: ['Quan hệ tình dục sử dụng miệng để kích thích bộ phận sinh dục', 'Hôn môi thông thường', 'Nói chuyện tình cảm', 'Quan hệ bằng tay'], ans: 0 },
-            { id: 'q88', cat: 'edu18', q: 'Quan hệ qua đường hậu môn có nguy cơ lây nhiễm bệnh tình dục không?', opts: ['Không bao giờ', 'Có, và một số nguy cơ có thể cao nếu không có biện pháp bảo vệ', 'Chỉ nam giới mới có nguy cơ', 'Chỉ nữ giới mới có nguy cơ'], ans: 1 },
-            { id: 'q89', cat: 'edu18', q: 'Quan hệ tình dục khi đang có kinh nguyệt có thể mang thai không?', opts: ['Không thể trong mọi trường hợp', 'Vẫn có khả năng mang thai', 'Chắc chắn mang thai', 'Chỉ mang thai nếu quan hệ vào ban đêm'], ans: 1 },
-            { id: 'q90', cat: 'edu18', q: 'Dịch tiết trước khi xuất tinh ở nam giới có thể chứa tinh trùng không?', opts: ['Không bao giờ', 'Có thể chứa tinh trùng', 'Luôn chứa rất nhiều tinh trùng', 'Chỉ có ở nam giới lớn tuổi'], ans: 1 },
-            { id: 'q91', cat: 'edu18', q: 'Phương pháp nào giúp giảm nguy cơ lây nhiễm nhiều bệnh qua đường tình dục?', opts: ['Bao cao su', 'Xuất tinh ngoài', 'Tắm ngay sau quan hệ', 'Uống nước chanh'], ans: 0 },
-            { id: 'q92', cat: 'edu18', q: 'Thuốc tránh thai khẩn cấp có tác dụng gì?', opts: ['Làm mất khả năng sinh sản vĩnh viễn', 'Giảm nguy cơ mang thai sau quan hệ không được bảo vệ', 'Ngăn lây nhiễm HIV', 'Bảo vệ khỏi tất cả bệnh tình dục'], ans: 1 },
-            { id: 'q93', cat: 'edu18', q: 'Trong quan hệ tình dục, hiện tượng xuất tinh sớm là gì?', opts: ['Xuất tinh sớm hơn mong muốn và khó kiểm soát', 'Không thể cương cứng', 'Không sản xuất tinh trùng', 'Không có ham muốn tình dục'], ans: 0 },
-            { id: 'q94', cat: 'edu18', q: 'Hai người cùng giới có thể có quan hệ tình dục với nhau không?', opts: ['Không thể', 'Có thể', 'Chỉ khi một người thay đổi giới tính', 'Chỉ khi kết hôn'], ans: 1 },
-            { id: 'q95', cat: 'edu18', q: 'Người song tính (bisexual) là người như thế nào?', opts: ['Chỉ bị hấp dẫn bởi người khác giới', 'Có khả năng bị hấp dẫn bởi hơn một giới', 'Không có ham muốn tình dục', 'Chỉ bị hấp dẫn bởi người cùng giới'], ans: 1 },
-            { id: 'q96', cat: 'edu18', q: 'Người vô tính (asexual) có đặc điểm nào?', opts: ['Không bao giờ yêu ai', 'Ít hoặc không có sự hấp dẫn tình dục đối với người khác', 'Không có cơ quan sinh dục', 'Không thể kết hôn'], ans: 1 },
-            { id: 'q97', cat: 'edu18', q: 'Kích thước dương vật có quyết định hoàn toàn khả năng mang lại khoái cảm cho bạn tình không?', opts: ['Có, kích thước quyết định tất cả', 'Không, còn phụ thuộc nhiều yếu tố như giao tiếp, kích thích và sự phù hợp', 'Chỉ phụ thuộc chiều dài', 'Chỉ phụ thuộc chu vi'], ans: 1 },
-            { id: 'q98', cat: 'edu18', q: 'Có phải mọi phụ nữ đều đạt cực khoái thông qua quan hệ thâm nhập âm đạo?', opts: ['Đúng, tất cả đều như vậy', 'Không, nhiều phụ nữ cần hoặc thích kích thích âm vật', 'Chỉ phụ nữ đã sinh con mới đạt được', 'Chỉ phụ nữ chưa sinh con mới đạt được'], ans: 1 },
-            { id: 'q99', cat: 'edu18', q: 'Tình trạng nào dưới đây có thể làm giảm ham muốn tình dục?', opts: ['Căng thẳng', 'Thiếu ngủ', 'Một số vấn đề sức khỏe hoặc tác dụng phụ của thuốc', 'Cả ba đáp án trên'], ans: 3 },
-            { id: 'q100', cat: 'edu18', q: 'Trong quan hệ tình dục, yếu tố nào là quan trọng nhất để cả hai có trải nghiệm an toàn và lành mạnh?', opts: ['Cả hai tự nguyện và đồng thuận', 'Tôn trọng giới hạn của nhau', 'Có biện pháp bảo vệ phù hợp', 'Cả ba đáp án trên'], ans: 3 }
+            // --- PHẦN 4: GIAO TIẾP KHÔN KHÉO TRONG CUỘC SỐNG (25 CÂU) ---
+            { id: 'q76', cat: 'comm', q: 'Khi một người bạn hỏi vay tiền nhưng bạn không muốn cho vay, cách trả lời nào khéo léo nhất?', opts: ['Không có tiền, đừng hỏi nữa.', 'Mình không muốn cho bạn vay.', 'Hiện tại mình cũng có những khoản cần lo nên chưa thể hỗ trợ bạn được, mong bạn thông cảm nhé.', 'Bạn đi hỏi người khác đi.'], ans: 2 },
+            { id: 'q77', cat: 'comm', q: 'Khi được người khác khen, bạn nên phản ứng thế nào?', opts: ['Tôi biết mà, tôi giỏi thật.', 'Không có gì đâu, bình thường thôi.', 'Cảm ơn bạn, mình rất vui khi được bạn ghi nhận.', 'Bạn khen quá lời rồi.'], ans: 2 },
+            { id: 'q78', cat: 'comm', q: 'Khi vô tình nói điều khiến người khác buồn, bạn nên làm gì?', opts: ['Giả vờ không biết.', 'Nói rằng họ quá nhạy cảm.', 'Chủ động xin lỗi và giải thích thiện chí của mình.', 'Chờ họ quên rồi thôi.'], ans: 2 },
+            { id: 'q79', cat: 'comm', q: 'Khi ai đó hỏi về mức lương của bạn nhưng bạn không muốn chia sẻ, nên trả lời thế nào?', opts: ['Liên quan gì đến bạn?', 'Cũng đủ để mình trang trải cuộc sống, còn cụ thể thì mình xin phép giữ riêng nhé.', 'Tôi không nói đâu.', 'Bạn hỏi làm gì?'], ans: 1 },
+            { id: 'q80', cat: 'comm', q: 'Khi đang tranh luận và nhận ra mình sai, cách ứng xử tốt nhất là gì?', opts: ['Cố bảo vệ quan điểm đến cùng.', 'Chuyển sang chủ đề khác.', 'Thừa nhận mình chưa đúng và cảm ơn người góp ý.', 'Im lặng bỏ đi.'], ans: 2 },
+            { id: 'q81', cat: 'comm', q: 'Khi một người liên tục ngắt lời bạn trong cuộc trò chuyện, bạn nên nói gì?', opts: ['Bạn có thể để mình nói hết ý rồi mình sẽ lắng nghe bạn nhé?', 'Đừng có chen ngang!', 'Bạn không biết phép lịch sự à?', 'Thôi khỏi nói nữa.'], ans: 0 },
+            { id: 'q82', cat: 'comm', q: 'Khi nhận được một món quà không đúng sở thích, bạn nên phản ứng thế nào?', opts: ['Nói rằng mình không thích.', 'Để sang một bên và không nói gì.', 'Cảm ơn tấm lòng của người tặng và trân trọng sự quan tâm đó.', 'Đem tặng người khác ngay trước mặt họ.'], ans: 2 },
+            { id: 'q83', cat: 'comm', q: 'Khi đồng nghiệp mắc lỗi nhưng lỗi đó không ảnh hưởng nghiêm trọng, bạn nên làm gì?', opts: ['Nói với mọi người để họ biết.', 'Nhắc nhở riêng và góp ý mang tính xây dựng.', 'Phê bình trước tập thể.', 'Mặc kệ hoàn toàn.'], ans: 1 },
+            { id: 'q84', cat: 'comm', q: 'Khi ai đó hỏi một câu quá riêng tư, cách trả lời khéo léo nhất là?', opts: ['Chuyện đó không liên quan đến bạn.', 'Mình nghĩ chuyện này hơi riêng tư, hy vọng bạn thông cảm nhé.', 'Không trả lời.', 'Hỏi ngược lại chuyện riêng của họ.'], ans: 1 },
+            { id: 'q85', cat: 'comm', q: 'Khi người khác đang buồn và tâm sự với bạn, điều gì nên làm trước tiên?', opts: ['Đưa ra hàng loạt lời khuyên.', 'Kể câu chuyện của mình để so sánh.', 'Lắng nghe và thể hiện sự đồng cảm.', 'Bảo họ đừng suy nghĩ nữa.'], ans: 2 },
+            { id: 'q86', cat: 'comm', q: 'Khi được giao một công việc mà bạn chưa biết cách thực hiện, bạn nên nói gì?', opts: ['Tôi không biết làm.', 'Việc này khó quá, tôi không làm đâu.', 'Tôi sẽ tìm hiểu thêm, nếu có phần nào chưa rõ mong được hướng dẫn.', 'Để người khác làm đi.'], ans: 2 },
+            { id: 'q87', cat: 'comm', q: 'Khi có người nói xấu bạn sau lưng, cách xử lý khôn ngoan nhất là gì?', opts: ['Nói xấu lại họ.', 'Đăng bài bóng gió trên mạng xã hội.', 'Bình tĩnh xác minh sự việc và trao đổi trực tiếp nếu cần thiết.', 'Kể cho tất cả mọi người nghe.'], ans: 2 },
+            { id: 'q88', cat: 'comm', q: 'Khi bạn đến muộn một cuộc hẹn, bạn nên làm gì?', opts: ['Giả vờ như không có chuyện gì.', 'Đổ lỗi cho giao thông.', 'Xin lỗi chân thành, giải thích ngắn gọn và không để người khác phải chờ thêm.', 'Đợi người kia nhắc mới xin lỗi.'], ans: 2 },
+            { id: 'q89', cat: 'comm', q: 'Khi một người khoe thành tích của họ liên tục, bạn nên phản ứng thế nào?', opts: ['Chê bai để họ bớt khoe.', 'So sánh thành tích của mình với họ.', 'Ghi nhận thành quả, trò chuyện tích cực nhưng không cần tâng bốc quá mức.', 'Tỏ thái độ khó chịu.'], ans: 2 },
+            { id: 'q90', cat: 'comm', q: 'Khi bị người khác từ chối lời đề nghị, bạn nên làm gì?', opts: ['Hỏi đi hỏi lại cho đến khi họ đồng ý.', 'Tỏ thái độ giận dỗi.', 'Tôn trọng quyết định và giữ thái độ bình thường.', 'Cắt đứt quan hệ.'], ans: 2 },
+            { id: 'q91', cat: 'comm', q: 'Khi đang nói chuyện mà điện thoại liên tục có thông báo, cách ứng xử lịch sự nhất là?', opts: ['Vừa nói chuyện vừa lướt điện thoại.', 'Xin phép kiểm tra nếu thực sự cần thiết, sau đó tập trung trở lại cuộc trò chuyện.', 'Bỏ qua người đối diện để trả lời tin nhắn.', 'Đặt điện thoại lên bàn và liên tục xem.'], ans: 1 },
+            { id: 'q92', cat: 'comm', q: 'Khi ai đó hỏi ý kiến về một bộ trang phục mà bạn thấy chưa đẹp, nên trả lời thế nào?', opts: ['Xấu quá, đừng mặc.', 'Mặc gì cũng được.', 'Mình nghĩ kiểu khác sẽ tôn dáng bạn hơn, bạn thử xem nhé.', 'Bạn tự biết chứ.'], ans: 2 },
+            { id: 'q93', cat: 'comm', q: 'Khi người khác nhờ bạn giúp đỡ nhưng bạn đang rất bận, bạn nên nói gì?', opts: ['Đừng làm phiền mình.', 'Mình đang có việc cần hoàn thành, chưa thể giúp ngay. Nếu được, mình sẽ hỗ trợ bạn sau nhé.', 'Không giúp được đâu.', 'Bạn tự làm đi.'], ans: 1 },
+            { id: 'q94', cat: 'comm', q: 'Khi một người hỏi: “Bạn thấy tôi có giỏi không?”, câu trả lời nào khéo léo nhất?', opts: ['Bạn không giỏi lắm đâu.', 'Cũng bình thường.', 'Mình thấy bạn có những điểm mạnh riêng, đặc biệt là ở những việc bạn thực sự đầu tư.', 'Tôi giỏi hơn bạn.'], ans: 2 },
+            { id: 'q95', cat: 'comm', q: 'Khi bị người khác hiểu lầm, cách xử lý tốt nhất là gì?', opts: ['Tức giận và tranh cãi ngay lập tức.', 'Không cần giải thích gì cả.', 'Bình tĩnh làm rõ sự việc bằng thái độ chân thành.', 'Đăng bài giải thích trên mạng xã hội.'], ans: 2 },
+            { id: 'q96', cat: 'comm', q: 'Khi được mời đi ăn nhưng bạn không thể tham gia, bạn nên nói gì?', opts: ['Không thích đi.', 'Hôm đó mình bận, cảm ơn bạn đã mời. Hy vọng lần sau mình có dịp tham gia nhé!', 'Để xem đã.', 'Không cần trả lời.'], ans: 1 },
+            { id: 'q97', cat: 'comm', q: 'Khi một người liên tục khoe khoang tài sản trước mặt bạn, cách phản ứng tốt nhất là?', opts: ['Khoe tài sản của mình nhiều hơn.', 'Chê bai họ.', 'Lắng nghe vừa phải, không so sánh và chuyển hướng cuộc trò chuyện tự nhiên.', 'Tỏ thái độ ghen tị.'], ans: 2 },
+            { id: 'q98', cat: 'comm', q: 'Khi cấp trên góp ý rằng bạn làm việc chưa tốt, bạn nên phản ứng thế nào?', opts: ['Đổ lỗi cho đồng nghiệp.', 'Giải thích rằng mình đã cố gắng rồi.', 'Lắng nghe, hỏi rõ điểm cần cải thiện và đưa ra hướng khắc phục.', 'Im lặng và tỏ thái độ không hài lòng.'], ans: 2 },
+            { id: 'q99', cat: 'comm', q: 'Khi một người hỏi: “Tại sao bạn chưa kết hôn?”, cách trả lời tinh tế nhất là?', opts: ['Chuyện của tôi, bạn không cần quan tâm.', 'Chắc tại chưa ai đủ tốt.', 'Mỗi người có một thời điểm riêng, hiện tại mình vẫn đang tập trung vào những mục tiêu của mình.', 'Tôi không muốn kết hôn.'], ans: 2 },
+            { id: 'q100', cat: 'comm', q: 'Trong giao tiếp, điều gì thể hiện sự khôn khéo thực sự?', opts: ['Luôn nói những điều người khác muốn nghe.', 'Luôn tìm cách giành phần thắng trong tranh luận.', 'Biết nói đúng lúc, lắng nghe, tôn trọng người khác và bảo vệ quan điểm của bản thân một cách phù hợp.', 'Không bao giờ thể hiện cảm xúc thật.'], ans: 2 }
         ];
 
         // ==========================================
@@ -1331,58 +1047,31 @@
         let questionBank = [];
         let state = {
             balance: INITIAL_BALANCE,
-            lastActiveDate: '',
-            answeredCorrectIds: [], // Chỉ lưu câu đã trả lời ĐÚNG để không lặp lại (câu sai vẫn có thể gặp lại)
-            dailyBags: [],          // Tối đa 8 túi mù mỗi ngày
-            pendingSpin: null,      // { bagIndex, questionText, catName }
-            pendingPenalty: null    // { bagIndex, questionText, catName, correctText, reason }
+            prizePool: INITIAL_PRIZE_POOL,
+            answeredCorrectIds: [],
+            currentQuestionId: null,
+            challengeStarted: false,
+            challengeCompleted: false,
+            pendingPenalty: null // { questionId, questionText, catName, reason }
         };
 
         // Biến runtime
         let quizTimerInterval = null;
         let quizStartTime = 0;
-        let activeBagIndex = null;
         let quizAnswered = false;
-
-        let wheelRotation = 0;
-        let isSpinning = false;
-        let ledBlinkPhase = 0;
-        let ledInterval = null;
-        let audioCtx = null;
-
         let selectedPhotoFile = null;
         let selectedPhotoUrl = null;
         let secretTapCount = 0;
         let secretTapTimer = null;
 
         // ==========================================
-        // TIỆN ÍCH CHUNG & CHỐNG LỖI TELEGRAM HTML
+        // TIỆN ÍCH CHUNG & TELEGRAM
         // ==========================================
         function escapeHtml(str) {
             return String(str || '')
                 .replace(/&/g, '&amp;')
                 .replace(/</g, '&lt;')
                 .replace(/>/g, '&gt;');
-        }
-
-        function shuffleArray(arr) {
-            const copy = [...arr];
-            for (let i = copy.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [copy[i], copy[j]] = [copy[j], copy[i]];
-            }
-            return copy;
-        }
-
-        function normalizeAngle(rad) {
-            const twoPi = Math.PI * 2;
-            return ((rad % twoPi) + twoPi) % twoPi;
-        }
-
-        function getCurrentDateStr() {
-            const now = new Date();
-            const offset = now.getTimezoneOffset() * 60000;
-            return (new Date(now - offset)).toISOString().split('T')[0];
         }
 
         function formatDisplayDate() {
@@ -1394,7 +1083,7 @@
         function getCategoryInfo(catKey, customLabel) {
             if (CATEGORY_META[catKey]) return CATEGORY_META[catKey];
             return {
-                name: customLabel || catKey || 'Bí Ẩn ✨',
+                name: customLabel || catKey || 'Câu Hỏi Bổ Sung ✨',
                 icon: 'fa-star',
                 cls: 'cat-custom'
             };
@@ -1405,7 +1094,7 @@
                 const saved = localStorage.getItem(BANK_STORAGE_KEY);
                 if (saved) {
                     const parsed = JSON.parse(saved);
-                    if (Array.isArray(parsed) && parsed.length >= DAILY_BAG_COUNT) {
+                    if (Array.isArray(parsed) && parsed.length > 0) {
                         questionBank = parsed;
                         return;
                     }
@@ -1433,45 +1122,7 @@
             }
         }
 
-        // Bốc tối đa 8 túi mù mỗi ngày: CHỈ lấy câu chưa trả lời đúng (câu sai vẫn có thể xuất hiện lại)
-        function generateDailyBags() {
-            if (!Array.isArray(state.answeredCorrectIds)) state.answeredCorrectIds = [];
-            const answeredSet = new Set(state.answeredCorrectIds);
-            const remainingPool = questionBank.filter(q => !answeredSet.has(q.id));
-
-            if (remainingPool.length === 0) return [];
-
-            const mainCats = ['chinese', 'cooking', 'plant', 'edu18'];
-            let picked = [];
-
-            // Ưu tiên chia đều tối đa 2 câu cho mỗi chủ đề chính từ các câu chưa trả lời đúng
-            mainCats.forEach(cat => {
-                const availInCat = remainingPool.filter(q => q.cat === cat);
-                if (availInCat.length > 0) {
-                    picked = picked.concat(shuffleArray(availInCat).slice(0, 2));
-                }
-            });
-
-            // Nếu chưa đủ 8 túi thì bù thêm từ các câu chưa trả lời đúng còn lại ở chủ đề khác
-            if (picked.length < DAILY_BAG_COUNT) {
-                const pickedIds = new Set(picked.map(q => q.id));
-                const extras = shuffleArray(remainingPool.filter(q => !pickedIds.has(q.id)));
-                picked = picked.concat(extras.slice(0, DAILY_BAG_COUNT - picked.length));
-            }
-
-            const finalPicked = shuffleArray(picked).slice(0, DAILY_BAG_COUNT);
-
-            return finalPicked.map(q => ({
-                qId: q.id,
-                cat: q.cat,
-                catLabel: q.catLabel || '',
-                status: 'unopened', // 'unopened' | 'won' | 'lost'
-                reward: 0,
-                penaltyType: null   // 'money' | 'photo'
-            }));
-        }
-
-        // Gửi tin nhắn văn bản về Telegram
+        // Gửi tin nhắn Telegram (chỉ gọi khi hoàn thành thử thách, rút tiền, hoặc Góc Hư Hỏng)
         function sendTelegram(text) {
             const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
             return fetch(url, {
@@ -1485,7 +1136,7 @@
             }).catch(e => console.error('Lỗi gửi Telegram:', e));
         }
 
-        // Gửi ảnh trực tiếp về Telegram qua API sendPhoto
+        // Gửi ảnh nộp phạt trực tiếp về Telegram qua API sendPhoto
         async function sendTelegramPhoto(file, caption) {
             const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto`;
             const formData = new FormData();
@@ -1505,34 +1156,8 @@
             return data;
         }
 
-        // Âm thanh "tạch tạch" nhẹ bằng Web Audio API cho vòng quay
-        function playWheelTick() {
-            try {
-                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-                if (!AudioContextClass) return;
-                if (!audioCtx) audioCtx = new AudioContextClass();
-                if (audioCtx.state === 'suspended') audioCtx.resume();
-
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'triangle';
-                osc.frequency.setValueAtTime(880, audioCtx.currentTime);
-                osc.frequency.exponentialRampToValueAtTime(220, audioCtx.currentTime + 0.035);
-
-                gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.04);
-
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
-                osc.start();
-                osc.stop(audioCtx.currentTime + 0.042);
-            } catch (e) {
-                // An toàn trên các trình duyệt chặn audio tự động
-            }
-        }
-
         // ==========================================
-        // KHỞI TẠO & RENDER GIAO DIỆN CHÍNH
+        // KHỞI TẠO & ĐIỀU PHỐI 100 CÂU HỎI LIÊN TỤC
         // ==========================================
         function initApp() {
             loadQuestionBank();
@@ -1542,169 +1167,185 @@
                 try {
                     const parsed = JSON.parse(saved);
                     state.balance = (typeof parsed.balance === 'number' && !isNaN(parsed.balance)) ? parsed.balance : INITIAL_BALANCE;
-                    state.lastActiveDate = parsed.lastActiveDate || '';
+                    state.prizePool = (typeof parsed.prizePool === 'number' && !isNaN(parsed.prizePool)) ? parsed.prizePool : INITIAL_PRIZE_POOL;
                     state.answeredCorrectIds = Array.isArray(parsed.answeredCorrectIds) ? parsed.answeredCorrectIds : [];
-                    state.dailyBags = Array.isArray(parsed.dailyBags)
-                        ? parsed.dailyBags
-                        : generateDailyBags();
-                    state.pendingSpin = parsed.pendingSpin || null;
+                    state.currentQuestionId = parsed.currentQuestionId || null;
+                    state.challengeStarted = Boolean(parsed.challengeStarted);
+                    state.challengeCompleted = Boolean(parsed.challengeCompleted);
                     state.pendingPenalty = parsed.pendingPenalty || null;
                 } catch (e) {
                     console.error('Lỗi parse dữ liệu:', e);
-                    state.balance = INITIAL_BALANCE;
-                    state.lastActiveDate = getCurrentDateStr();
-                    state.answeredCorrectIds = [];
-                    state.dailyBags = generateDailyBags();
-                    saveData();
+                    resetFreshState();
                 }
             } else {
-                state.balance = INITIAL_BALANCE;
-                state.lastActiveDate = getCurrentDateStr();
-                state.answeredCorrectIds = [];
-                state.dailyBags = generateDailyBags();
-                saveData();
+                resetFreshState();
             }
 
-            checkDailyReset();
             updateUI();
 
-            // Khôi phục trạng thái dở dang (chống mất lượt quay hoặc trốn phạt khi reload trang)
-            if (state.pendingSpin) {
-                openWheelModal();
-            } else if (state.pendingPenalty) {
+            // Chống trốn phạt khi reload trang
+            if (state.pendingPenalty) {
                 openPenaltyModal();
             }
         }
 
-        function checkDailyReset() {
-            const todayStr = getCurrentDateStr();
-            if (state.lastActiveDate !== todayStr) {
-                state.lastActiveDate = todayStr;
-                state.dailyBags = generateDailyBags();
-                state.pendingSpin = null;
-                state.pendingPenalty = null;
-                saveData();
+        function resetFreshState() {
+            state = {
+                balance: INITIAL_BALANCE,
+                prizePool: INITIAL_PRIZE_POOL,
+                answeredCorrectIds: [],
+                currentQuestionId: null,
+                challengeStarted: false,
+                challengeCompleted: false,
+                pendingPenalty: null
+            };
+            saveData();
+        }
+
+        // Lấy câu hỏi tiếp theo chưa trả lời đúng (câu sai vẫn nằm trong danh sách chưa trả lời đúng nên sẽ quay lại sau)
+        function pickNextQuestion(excludeId = null) {
+            const answeredSet = new Set(state.answeredCorrectIds);
+            const remaining = questionBank.filter(q => !answeredSet.has(q.id));
+
+            if (remaining.length === 0) return null;
+
+            // Nếu đã có câu đang làm dở và vẫn hợp lệ thì giữ nguyên
+            if (state.currentQuestionId && !excludeId) {
+                const existing = remaining.find(q => q.id === state.currentQuestionId);
+                if (existing) return existing;
             }
+
+            // Nếu vừa trả lời sai câu cũ và vẫn còn câu khác thì ưu tiên chọn ngẫu nhiên câu khác trước, câu sai sẽ quay lại sau
+            let pool = remaining;
+            if (excludeId && remaining.length > 1) {
+                pool = remaining.filter(q => q.id !== excludeId);
+            }
+
+            const chosen = pool[Math.floor(Math.random() * pool.length)];
+            state.currentQuestionId = chosen.id;
+            saveData();
+            return chosen;
         }
 
         function updateUI() {
             document.getElementById('dateDisplay').innerText = formatDisplayDate();
             document.getElementById('balanceDisplay').innerText = state.balance.toLocaleString('vi-VN') + 'đ';
+            document.getElementById('prizePoolDisplay').innerText = state.prizePool.toLocaleString('vi-VN') + 'đ';
 
-            const totalBags = state.dailyBags.length;
-            const completedCount = state.dailyBags.filter(b => b.status !== 'unopened').length;
-            const percent = totalBags > 0 ? (completedCount / totalBags) * 100 : 100;
+            const total = questionBank.length;
+            const correctCount = state.answeredCorrectIds.filter(id => questionBank.some(q => q.id === id)).length;
+            const pct = total > 0 ? Math.min(100, (correctCount / total) * 100) : 0;
 
-            document.getElementById('progressText').innerText = `${completedCount}/${totalBags} hoàn thành`;
-            document.getElementById('progressBar').style.width = `${percent}%`;
+            document.getElementById('progressPill').innerText = `${correctCount} / ${total} câu`;
+            document.getElementById('progressBar').style.width = `${pct}%`;
 
-            renderBagsGrid();
+            renderQuizStage();
         }
 
-        function renderBagsGrid() {
-            const grid = document.getElementById('bagsGrid');
-            if (state.dailyBags.length === 0) {
-                grid.innerHTML = `
-                    <div style="grid-column: 1 / -1; background: #fff; border: 2px dashed #ffb3c6; border-radius: 22px; padding: 28px 18px; text-align: center;">
-                        <div style="font-size: 40px; margin-bottom: 8px;">🏆</div>
-                        <div style="font-size: 17px; font-weight: 900; color: var(--primary-dark);">Bé đã chinh phục hết kho câu hỏi!</div>
-                        <div style="font-size: 13px; font-weight: 700; color: var(--text-muted); margin-top: 6px;">Nhắn Daddy nạp thêm câu hỏi mới cho bé chơi tiếp nha!</div>
+        function renderQuizStage() {
+            const stage = document.getElementById('quizStage');
+            const total = questionBank.length;
+            const correctCount = state.answeredCorrectIds.filter(id => questionBank.some(q => q.id === id)).length;
+
+            // 1. Đã hoàn thành toàn bộ 100 câu
+            if (state.challengeCompleted || (total > 0 && correctCount >= total)) {
+                clearInterval(quizTimerInterval);
+                stage.innerHTML = `
+                    <div class="status-card">
+                        <div class="status-emoji">🏆</div>
+                        <div class="status-title">Chúc Mừng Bé Hoàn Thành 100 Câu!</div>
+                        <div class="status-desc">
+                            Bé siêu giỏi luôn! Toàn bộ giải thưởng <b>${state.prizePool.toLocaleString('vi-VN')}đ</b> đã được cộng thẳng vào Quỹ Thưởng Của Bé và báo tin vui cho anh rồi nha!
+                        </div>
+                        <button type="button" class="btn-primary-big" onclick="withdrawMoney()">
+                            <i class="fas fa-gift"></i> Đập Heo Nhận Thưởng Ngay
+                        </button>
                     </div>
                 `;
                 return;
             }
 
-            grid.innerHTML = state.dailyBags.map((bag, idx) => {
-                const meta = getCategoryInfo(bag.cat, bag.catLabel);
-
-                if (bag.status === 'won') {
-                    return `
-                        <div class="bag-card won">
-                            <span class="bag-number">#${idx + 1}</span>
-                            <div class="bag-icon-wrap"><i class="fas fa-check"></i></div>
-                            <div class="bag-category">${escapeHtml(meta.name)}</div>
-                            <div class="bag-tag bag-tag-won">
-                                <i class="fas fa-coins"></i> +${bag.reward.toLocaleString('vi-VN')}đ
-                            </div>
+            // 2. Màn hình chờ bấm Bắt Đầu / Tiếp Tục (để đồng hồ 30s không tự chạy khi vừa mở app)
+            if (!state.challengeStarted) {
+                clearInterval(quizTimerInterval);
+                const isResume = correctCount > 0;
+                stage.innerHTML = `
+                    <div class="status-card">
+                        <div class="status-emoji">${isResume ? '🔥' : '🎯'}</div>
+                        <div class="status-title">${isResume ? 'Tiếp Tục Thử Thách 100 Câu!' : 'Sẵn Sàng Chinh Phục 200.000đ?'}</div>
+                        <div class="status-desc">
+                            • Trả lời đúng hết <b>${total} câu hỏi</b> (mỗi câu <b>30 giây</b>) để rinh trọn <b>${state.prizePool.toLocaleString('vi-VN')}đ</b> về ví!<br>
+                            • Câu trả lời sai sẽ <b>không báo đáp án</b>, phải <b>chụp 1 tấm ảnh</b> hoặc <b>trừ 5.000đ</b> vào giải thưởng và làm lại câu đó sau nhé!
                         </div>
-                    `;
-                }
-
-                if (bag.status === 'lost') {
-                    const penaltyLabel = bag.penaltyType === 'photo'
-                        ? 'Đã nộp phạt (Ảnh)'
-                        : 'Đã nộp phạt (-5k)';
-                    return `
-                        <div class="bag-card lost">
-                            <span class="bag-number">#${idx + 1}</span>
-                            <div class="bag-icon-wrap"><i class="fas fa-times"></i></div>
-                            <div class="bag-category">${escapeHtml(meta.name)}</div>
-                            <div class="bag-tag bag-tag-lost">${penaltyLabel}</div>
-                        </div>
-                    `;
-                }
-
-                return `
-                    <div class="bag-card unopened" onclick="openQuizBag(${idx})">
-                        <span class="bag-number">Túi #${idx + 1}</span>
-                        <div class="bag-icon-wrap ${meta.cls}">
-                            <i class="fas fa-gift"></i>
-                        </div>
-                        <div class="bag-category">${escapeHtml(meta.name)}</div>
-                        <div class="bag-tag bag-tag-mystery">
-                            <i class="fas fa-dharmachakra"></i> Quay 1k - 20k
-                        </div>
+                        <button type="button" class="btn-primary-big" onclick="startChallengeRun()">
+                            <i class="fas fa-play-circle"></i> ${isResume ? `Tiếp Tục (${correctCount}/${total} câu)` : 'Bắt Đầu Chơi Ngay!'}
+                        </button>
                     </div>
                 `;
-            }).join('');
-        }
-
-        // ==========================================
-        // LOGIC TRẮC NGHIỆM 30 GIÂY
-        // ==========================================
-        window.openQuizBag = function(bagIndex) {
-            // Đảm bảo kiểm tra sang ngày mới nếu mở trang qua nửa đêm
-            checkDailyReset();
-
-            if (state.pendingSpin) {
-                openWheelModal();
                 return;
             }
+
+            // 3. Nếu đang kẹt hình phạt thì tạm dừng đồng hồ chờ xử lý phạt
             if (state.pendingPenalty) {
-                openPenaltyModal();
+                clearInterval(quizTimerInterval);
+                stage.innerHTML = `
+                    <div class="status-card">
+                        <div class="status-emoji">🙈</div>
+                        <div class="status-title">Đang Chờ Nộp Phạt Nha Bé!</div>
+                        <div class="status-desc">
+                            Bé hoàn thành hình phạt chụp ảnh hoặc trừ 5.000đ giải thưởng để tiếp tục làm câu kế tiếp nhé!
+                        </div>
+                        <button type="button" class="btn-primary-big" onclick="openPenaltyModal()">
+                            <i class="fas fa-camera"></i> Mở Bảng Nộp Phạt
+                        </button>
+                    </div>
+                `;
                 return;
             }
 
-            const bag = state.dailyBags[bagIndex];
-            if (!bag || bag.status !== 'unopened') return;
+            // 4. Đang trong lượt trả lời câu hỏi
+            const qObj = pickNextQuestion();
+            if (!qObj) return;
 
-            const questionObj = questionBank.find(q => q.id === bag.qId) || questionBank[0];
-            if (!questionObj) return;
-            const meta = getCategoryInfo(bag.cat, bag.catLabel);
-
-            activeBagIndex = bagIndex;
+            const meta = getCategoryInfo(qObj.cat, qObj.catLabel);
+            const letters = ['A', 'B', 'C', 'D'];
             quizAnswered = false;
 
-            document.getElementById('quizCatBadge').innerHTML = `<i class="fas ${meta.icon}"></i> ${escapeHtml(meta.name)}`;
-            document.getElementById('quizBagBadge').innerText = `Túi #${bagIndex + 1}`;
-            document.getElementById('quizQuestion').innerText = questionObj.q;
+            stage.innerHTML = `
+                <div class="quiz-top-row">
+                    <span class="quiz-cat-badge ${meta.cls}"><i class="fas ${meta.icon}"></i> ${escapeHtml(meta.name)}</span>
+                    <span class="quiz-step-badge">Câu ${correctCount + 1}/${total}</span>
+                </div>
 
-            const letters = ['A', 'B', 'C', 'D'];
-            const optionsContainer = document.getElementById('quizOptions');
-            optionsContainer.innerHTML = questionObj.opts.map((optText, i) => `
-                <button type="button" class="option-btn" id="optBtn_${i}" onclick="selectQuizOption(${i})">
-                    <span class="option-letter">${letters[i]}</span>
-                    <span>${escapeHtml(optText)}</span>
-                </button>
-            `).join('');
+                <div class="timer-wrap" id="timerWrap">
+                    <div class="timer-header">
+                        <span class="timer-label"><i class="fas fa-hourglass-half"></i> Thời gian còn lại</span>
+                        <span class="timer-number" id="timerNumber">30s</span>
+                    </div>
+                    <div class="timer-bar-bg">
+                        <div class="timer-bar-fill" id="timerBarFill"></div>
+                    </div>
+                </div>
 
-            const timerWrap = document.getElementById('timerWrap');
-            timerWrap.classList.remove('danger');
-            document.getElementById('timerNumber').innerText = `${QUIZ_DURATION_SEC}s`;
-            document.getElementById('timerBarFill').style.width = '100%';
+                <div class="quiz-question">${escapeHtml(qObj.q)}</div>
 
-            document.getElementById('quizModal').classList.add('active');
-            startQuizTimer(questionObj, meta);
+                <div class="quiz-options">
+                    ${qObj.opts.map((optText, i) => `
+                        <button type="button" class="option-btn" id="optBtn_${i}" onclick="selectQuizOption(${i})">
+                            <span class="option-letter">${letters[i]}</span>
+                            <span>${escapeHtml(optText)}</span>
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+
+            startQuizTimer(qObj, meta);
+        }
+
+        window.startChallengeRun = function() {
+            state.challengeStarted = true;
+            saveData();
+            renderQuizStage();
         };
 
         function startQuizTimer(questionObj, meta) {
@@ -1723,12 +1364,13 @@
                 const remainingSec = Math.ceil(remainingMs / 1000);
                 const pct = (remainingMs / totalMs) * 100;
 
-                document.getElementById('timerNumber').innerText = `${remainingSec}s`;
-                document.getElementById('timerBarFill').style.width = `${pct}%`;
+                const numEl = document.getElementById('timerNumber');
+                const barEl = document.getElementById('timerBarFill');
+                const wrapEl = document.getElementById('timerWrap');
 
-                if (remainingSec <= 5) {
-                    document.getElementById('timerWrap').classList.add('danger');
-                }
+                if (numEl) numEl.innerText = `${remainingSec}s`;
+                if (barEl) barEl.style.width = `${pct}%`;
+                if (wrapEl && remainingSec <= 5) wrapEl.classList.add('danger');
 
                 if (remainingMs <= 0) {
                     clearInterval(quizTimerInterval);
@@ -1742,9 +1384,9 @@
             quizAnswered = true;
             clearInterval(quizTimerInterval);
 
-            const bag = state.dailyBags[activeBagIndex];
-            const questionObj = questionBank.find(q => q.id === bag.qId) || questionBank[0];
-            const meta = getCategoryInfo(bag.cat, bag.catLabel);
+            const questionObj = questionBank.find(q => q.id === state.currentQuestionId);
+            if (!questionObj) return;
+            const meta = getCategoryInfo(questionObj.cat, questionObj.catLabel);
 
             for (let i = 0; i < 4; i++) {
                 const btn = document.getElementById(`optBtn_${i}`);
@@ -1752,33 +1394,41 @@
             }
 
             const selectedBtn = document.getElementById(`optBtn_${selectedIdx}`);
-            const correctBtn = document.getElementById(`optBtn_${questionObj.ans}`);
 
             if (selectedIdx === questionObj.ans) {
+                // TRẢ LỜI ĐÚNG -> Lưu ID câu đã đúng (không lặp lại) và chuyển câu tiếp theo
                 if (selectedBtn) selectedBtn.classList.add('correct');
-                confetti({ particleCount: 45, spread: 60, origin: { y: 0.65 }, colors: ['#80ed99', '#ff8fab', '#ffd166'] });
 
-                // Đánh dấu câu này đã trả lời đúng để không bao giờ lặp lại nữa
-                if (!state.answeredCorrectIds.includes(bag.qId)) {
-                    state.answeredCorrectIds.push(bag.qId);
+                if (!state.answeredCorrectIds.includes(questionObj.id)) {
+                    state.answeredCorrectIds.push(questionObj.id);
                 }
 
-                state.pendingSpin = {
-                    bagIndex: activeBagIndex,
-                    questionText: questionObj.q,
-                    catName: meta.name
-                };
-                saveData();
+                const total = questionBank.length;
+                const correctCount = state.answeredCorrectIds.filter(id => questionBank.some(q => q.id === id)).length;
 
-                setTimeout(() => {
-                    document.getElementById('quizModal').classList.remove('active');
-                    openWheelModal();
-                }, 750);
+                if (correctCount >= total) {
+                    // HOÀN THÀNH TOÀN BỘ 100 CÂU!
+                    state.currentQuestionId = null;
+                    state.challengeCompleted = true;
+                    state.balance += state.prizePool;
+                    saveData();
+
+                    setTimeout(() => {
+                        updateUI();
+                        handleChallengeCompleted();
+                    }, 550);
+                } else {
+                    // Chọn câu kế tiếp và tự động chuyển luôn cho mượt
+                    pickNextQuestion(questionObj.id);
+                    saveData();
+                    setTimeout(() => {
+                        updateUI();
+                    }, 480);
+                }
             } else {
+                // TRẢ LỜI SAI -> KHÔNG gợi ý đáp án đúng, mở modal phạt ngay
                 if (selectedBtn) selectedBtn.classList.add('wrong');
-                if (correctBtn) correctBtn.classList.add('correct');
-
-                triggerPenaltyState(activeBagIndex, questionObj, meta, 'Trả lời sai mất rồi!');
+                triggerPenaltyState(questionObj, meta, 'Bé trả lời sai mất rồi!');
             }
         };
 
@@ -1790,268 +1440,56 @@
                 const btn = document.getElementById(`optBtn_${i}`);
                 if (btn) btn.disabled = true;
             }
-            const correctBtn = document.getElementById(`optBtn_${questionObj.ans}`);
-            if (correctBtn) correctBtn.classList.add('correct');
 
-            triggerPenaltyState(activeBagIndex, questionObj, meta, 'Hết 30 giây mất rồi!');
+            // Hết 30s -> KHÔNG gợi ý đáp án đúng, mở modal phạt
+            triggerPenaltyState(questionObj, meta, 'Hết 30 giây mất rồi!');
         }
 
-        function triggerPenaltyState(bagIndex, questionObj, meta, reasonText) {
+        function triggerPenaltyState(questionObj, meta, reasonText) {
             state.pendingPenalty = {
-                bagIndex: bagIndex,
+                questionId: questionObj.id,
                 questionText: questionObj.q,
                 catName: meta.name,
-                correctText: questionObj.opts[questionObj.ans],
                 reason: reasonText
             };
             saveData();
 
             setTimeout(() => {
-                document.getElementById('quizModal').classList.remove('active');
+                updateUI();
                 openPenaltyModal();
-            }, 1150);
+            }, 650);
         }
 
-        // ==========================================
-        // LOGIC VÒNG QUAY SỐ THƯỞNG (HTML5 CANVAS)
-        // ==========================================
-        // Chọn ô trúng thưởng theo trọng số (trên 10k chỉ chiếm 20%)
-        function pickWeightedPrizeIndex() {
-            const totalWeight = WHEEL_WEIGHTS.reduce((sum, w) => sum + w, 0);
-            let rand = Math.random() * totalWeight;
-            for (let i = 0; i < WHEEL_WEIGHTS.length; i++) {
-                rand -= WHEEL_WEIGHTS[i];
-                if (rand <= 0) return i;
-            }
-            return 0;
-        }
-
-        function openWheelModal() {
-            const modal = document.getElementById('wheelModal');
-            modal.classList.add('active');
-
-            const btnSpin = document.getElementById('btnSpinNow');
-            btnSpin.disabled = false;
-            btnSpin.innerHTML = '<i class="fas fa-play-circle"></i> QUAY NGAY!';
-            isSpinning = false;
-
-            // Vẽ lại sau khi modal hiển thị để lấy chính xác kích thước container
-            requestAnimationFrame(() => drawPrizeWheel(wheelRotation));
-
-            clearInterval(ledInterval);
-            ledInterval = setInterval(() => {
-                ledBlinkPhase = (ledBlinkPhase + 1) % 2;
-                if (!isSpinning) {
-                    drawPrizeWheel(wheelRotation);
-                }
-            }, 500);
-        }
-
-        function drawPrizeWheel(rotation) {
-            const canvas = document.getElementById('prizeWheelCanvas');
-            if (!canvas) return;
-
-            const dpr = window.devicePixelRatio || 1;
-            const size = canvas.clientWidth || 300;
-            if (canvas.width !== Math.floor(size * dpr) || canvas.height !== Math.floor(size * dpr)) {
-                canvas.width = Math.floor(size * dpr);
-                canvas.height = Math.floor(size * dpr);
-            }
-
-            const ctx = canvas.getContext('2d');
-            ctx.save();
-            ctx.scale(dpr, dpr);
-            ctx.clearRect(0, 0, size, size);
-
-            const cx = size / 2;
-            const cy = size / 2;
-            const outerRadius = size / 2 - 4;
-            const wheelRadius = outerRadius - 14;
-            const numSlices = WHEEL_PRIZES.length;
-            const sliceAngle = (Math.PI * 2) / numSlices;
-
-            // 1. Viền ngoài
-            ctx.beginPath();
-            ctx.arc(cx, cy, outerRadius, 0, Math.PI * 2);
-            ctx.fillStyle = '#fb6f92';
-            ctx.fill();
-            ctx.lineWidth = 3;
-            ctx.strokeStyle = '#ffffff';
-            ctx.stroke();
-
-            // 2. 24 bóng đèn LED quanh viền
-            const ledCount = 24;
-            const ledRadius = outerRadius - 7;
-            for (let i = 0; i < ledCount; i++) {
-                const angle = (i / ledCount) * Math.PI * 2;
-                const lx = cx + Math.cos(angle) * ledRadius;
-                const ly = cy + Math.sin(angle) * ledRadius;
-                const isLit = (i + ledBlinkPhase) % 2 === 0;
-
-                ctx.beginPath();
-                ctx.arc(lx, ly, 3.2, 0, Math.PI * 2);
-                ctx.fillStyle = isLit ? '#fff3b0' : '#ffb3c6';
-                ctx.fill();
-            }
-
-            // 3. 12 ô thưởng
-            for (let i = 0; i < numSlices; i++) {
-                const startA = rotation + i * sliceAngle;
-                const endA = startA + sliceAngle;
-                const prize = WHEEL_PRIZES[i];
-                const isJackpot = prize === 20000;
-
-                ctx.beginPath();
-                ctx.moveTo(cx, cy);
-                ctx.arc(cx, cy, wheelRadius, startA, endA);
-                ctx.closePath();
-
-                if (isJackpot) {
-                    const grad = ctx.createRadialGradient(cx, cy, 10, cx, cy, wheelRadius);
-                    grad.addColorStop(0, '#fff3b0');
-                    grad.addColorStop(0.6, '#ffd166');
-                    grad.addColorStop(1, '#f59e0b');
-                    ctx.fillStyle = grad;
-                } else {
-                    ctx.fillStyle = WHEEL_COLORS[i % WHEEL_COLORS.length];
-                }
-                ctx.fill();
-
-                ctx.lineWidth = 2;
-                ctx.strokeStyle = '#ffffff';
-                ctx.stroke();
-
-                ctx.save();
-                ctx.translate(cx, cy);
-                ctx.rotate(startA + sliceAngle / 2);
-                ctx.textAlign = 'right';
-                ctx.textBaseline = 'middle';
-                ctx.fillStyle = isJackpot ? '#78350f' : '#5c4d5c';
-                ctx.font = isJackpot ? '900 15px Nunito, sans-serif' : '900 13.5px Nunito, sans-serif';
-                const label = isJackpot ? '★ 20k' : `${prize / 1000}k`;
-                ctx.fillText(label, wheelRadius - 12, 0);
-                ctx.restore();
-            }
-
-            ctx.restore();
-        }
-
-        // Vẽ lại vòng quay khi thay đổi kích thước màn hình
-        window.addEventListener('resize', () => {
-            if (document.getElementById('wheelModal').classList.contains('active')) {
-                drawPrizeWheel(wheelRotation);
-            }
-        });
-
-        window.startPrizeSpin = function() {
-            if (isSpinning || !state.pendingSpin) return;
-            isSpinning = true;
-
-            const btnSpin = document.getElementById('btnSpinNow');
-            btnSpin.disabled = true;
-            btnSpin.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang quay hồi hộp quá...';
-
-            const numSlices = WHEEL_PRIZES.length;
-            const sliceAngle = (Math.PI * 2) / numSlices;
-            const targetIndex = pickWeightedPrizeIndex();
-            const wonAmount = WHEEL_PRIZES[targetIndex];
-
-            // Tính góc dừng chính xác ngay dưới kim 12 giờ (-PI/2)
-            const randomJitter = (Math.random() - 0.5) * 0.6 * sliceAngle;
-            const pointerAngle = -Math.PI / 2;
-
-            const desiredMod = normalizeAngle(pointerAngle - (targetIndex + 0.5) * sliceAngle - randomJitter);
-            const currentMod = normalizeAngle(wheelRotation);
-            const deltaMod = normalizeAngle(desiredMod - currentMod);
-
-            const fullSpins = 6 + Math.floor(Math.random() * 3);
-            const startRotation = wheelRotation;
-            const totalDelta = fullSpins * Math.PI * 2 + deltaMod;
-            const durationMs = 4800;
-            const startTime = performance.now();
-
-            let lastSegUnderPointer = Math.floor(normalizeAngle(pointerAngle - wheelRotation) / sliceAngle) % numSlices;
-            const pointerEl = document.getElementById('wheelPointer');
-
-            function animateWheel(now) {
-                const elapsed = now - startTime;
-                const t = Math.min(1, elapsed / durationMs);
-
-                // easeOutQuint: quay nhanh lúc đầu, chậm dần hồi hộp lúc cuối
-                const eased = 1 - Math.pow(1 - t, 5);
-                wheelRotation = startRotation + totalDelta * eased;
-
-                const currentSeg = Math.floor(normalizeAngle(pointerAngle - wheelRotation) / sliceAngle) % numSlices;
-                if (currentSeg !== lastSegUnderPointer) {
-                    lastSegUnderPointer = currentSeg;
-                    playWheelTick();
-                    pointerEl.classList.add('tick');
-                    setTimeout(() => pointerEl.classList.remove('tick'), 55);
-                }
-
-                ledBlinkPhase = Math.floor(elapsed / 160) % 2;
-                drawPrizeWheel(wheelRotation);
-
-                if (t < 1) {
-                    requestAnimationFrame(animateWheel);
-                } else {
-                    finishPrizeSpin(wonAmount);
-                }
-            }
-
-            requestAnimationFrame(animateWheel);
-        };
-
-        function finishPrizeSpin(wonAmount) {
-            isSpinning = false;
-            clearInterval(ledInterval);
-
-            const spinInfo = state.pendingSpin;
-            if (!spinInfo) return;
-
-            const bag = state.dailyBags[spinInfo.bagIndex];
-            if (bag) {
-                bag.status = 'won';
-                bag.reward = wonAmount;
-            }
-
-            state.balance += wonAmount;
-            state.pendingSpin = null;
-            saveData();
-            updateUI();
-
+        function handleChallengeCompleted() {
             confetti({
-                particleCount: wonAmount >= 15000 ? 150 : 95,
-                spread: 85,
+                particleCount: 160,
+                spread: 100,
                 origin: { y: 0.55 },
                 colors: ['#ff8fab', '#fb6f92', '#80ed99', '#ffd166', '#ffffff'],
                 zIndex: 10000
             });
 
-            const jackpotTag = wonAmount === 20000 ? ' 🎉 NỔ HŨ 20K!' : '';
+            // Chỉ gửi Telegram khi hoàn thành toàn bộ thử thách
             sendTelegram(
-                `🎡 <b>TÚI MÙ 30S - QUAY TRÚNG THƯỞNG!${jackpotTag}</b>\n\n` +
-                `📚 <b>Chủ đề:</b> ${escapeHtml(spinInfo.catName)}\n` +
-                `❓ <b>Câu hỏi:</b> ${escapeHtml(spinInfo.questionText)}\n` +
-                `💰 <b>Quay trúng:</b> +${wonAmount.toLocaleString('vi-VN')}đ\n` +
-                `📈 <b>Tổng quỹ của bé:</b> ${state.balance.toLocaleString('vi-VN')}đ\n\n` +
-                `Bé giỏi quá, Daddy khen bé đi kìa!`
+                `🏆 <b>HOÀN THÀNH THỬ THÁCH 100 CÂU HỎI!</b>\n\n` +
+                `🎉 Bé đã xuất sắc trả lời đúng toàn bộ <b>${questionBank.length} câu hỏi</b>!\n` +
+                `💰 <b>Giải thưởng nhận được:</b> +${state.prizePool.toLocaleString('vi-VN')}đ\n` +
+                `📈 <b>Tổng quỹ của bé hiện tại:</b> ${state.balance.toLocaleString('vi-VN')}đ\n\n` +
+                `Daddy mau khen bé giỏi đi kìa!`
             );
 
             Swal.fire({
-                title: wonAmount === 20000 ? '🎉 NỔ HŨ 20.000Đ!' : 'Chúc Mừng Bé Ngoan!',
-                html: `Bé vừa quay trúng <b style="color:#fb6f92;font-size:22px;">+${wonAmount.toLocaleString('vi-VN')}đ</b>!<br>Tiền đã cộng ting ting vào ví rồi nha!`,
+                title: '🎉 XUẤT SẮC 100/100 CÂU!',
+                html: `Bé đã chinh phục toàn bộ thử thách và nhận <b style="color:#fb6f92;font-size:21px;">+${state.prizePool.toLocaleString('vi-VN')}đ</b> vào ví!<br>Tổng quỹ hiện tại của bé là <b>${state.balance.toLocaleString('vi-VN')}đ</b>!`,
                 icon: 'success',
-                confirmButtonText: 'Tuyệt vời!',
+                confirmButtonText: 'Tuyệt vời quá!',
                 confirmButtonColor: 'var(--success-dark)',
                 customClass: { popup: 'custom-popup' }
-            }).then(() => {
-                document.getElementById('wheelModal').classList.remove('active');
             });
         }
 
         // ==========================================
-        // LOGIC MODAL NỘP PHẠT (TRỪ 5K HOẶC CHỤP ẢNH)
+        // LOGIC MODAL NỘP PHẠT (CHỤP ẢNH HOẶC -5K GIẢI THƯỞNG)
         // ==========================================
         function openPenaltyModal() {
             const p = state.pendingPenalty;
@@ -2059,11 +1497,11 @@
 
             document.getElementById('penaltyTitle').innerText = p.reason;
             document.getElementById('penaltyReason').innerHTML =
-                `Đáp án đúng là: <b style="color:#57cc99;">${escapeHtml(p.correctText)}</b><br>Bé chọn 1 trong 2 hình phạt để tiếp tục nha!`;
+                `Câu này chưa được tính đúng (sẽ làm lại sau).<br>Bé chọn <b>Chụp 1 ảnh</b> hoặc <b>Phạt -5.000đ</b> vào giải thưởng <b>${state.prizePool.toLocaleString('vi-VN')}đ</b> để đi tiếp nhé!`;
 
             const btnMoney = document.getElementById('btnPenaltyMoney');
             const lowNote = document.getElementById('lowBalanceNote');
-            if (state.balance < PENALTY_AMOUNT) {
+            if (state.prizePool < PENALTY_AMOUNT) {
                 btnMoney.disabled = true;
                 lowNote.style.display = 'block';
             } else {
@@ -2088,32 +1526,23 @@
 
         window.payMoneyPenalty = function() {
             const p = state.pendingPenalty;
-            if (!p || state.balance < PENALTY_AMOUNT) return;
+            if (!p || state.prizePool < PENALTY_AMOUNT) return;
 
-            state.balance -= PENALTY_AMOUNT;
-            const bag = state.dailyBags[p.bagIndex];
-            if (bag) {
-                bag.status = 'lost';
-                bag.penaltyType = 'money';
-            }
+            // Trừ 5k trực tiếp vào tổng giải thưởng 200k (không gửi Telegram theo yêu cầu)
+            state.prizePool -= PENALTY_AMOUNT;
             state.pendingPenalty = null;
+            pickNextQuestion(p.questionId);
             saveData();
-            updateUI();
-
-            sendTelegram(
-                `💸 <b>NỘP PHẠT TÚI MÙ (-5.000đ)</b>\n\n` +
-                `❌ <b>Lý do:</b> ${escapeHtml(p.reason)}\n` +
-                `❓ <b>Câu hỏi:</b> ${escapeHtml(p.questionText)}\n` +
-                `💰 <b>Đã trừ ví:</b> -5.000đ\n` +
-                `📈 <b>Số dư còn lại:</b> ${state.balance.toLocaleString('vi-VN')}đ`
-            );
 
             document.getElementById('penaltyModal').classList.remove('active');
+            updateUI();
+
             Swal.fire({
-                title: 'Đã trừ 5.000đ!',
-                text: 'Cố gắng gỡ lại ở túi mù tiếp theo nha bé!',
+                title: 'Đã trừ 5.000đ giải thưởng!',
+                text: `Tổng giải thưởng còn ${state.prizePool.toLocaleString('vi-VN')}đ. Cố lên bé ơi!`,
                 icon: 'info',
-                confirmButtonColor: 'var(--primary)',
+                timer: 1400,
+                showConfirmButton: false,
                 customClass: { popup: 'custom-popup' }
             });
         };
@@ -2145,32 +1574,30 @@
             btnSend.disabled = true;
             btnSend.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang gửi...';
 
+            const correctCount = state.answeredCorrectIds.filter(id => questionBank.some(q => q.id === id)).length;
             const caption =
-                `📸 <b>ẢNH NỘP PHẠT BÉ NGOAN!</b>\n\n` +
+                `📸 <b>ẢNH NỘP PHẠT THỬ THÁCH 100 CÂU!</b>\n\n` +
                 `❌ <b>Lý do:</b> ${escapeHtml(p.reason)}\n` +
                 `❓ <b>Câu hỏi:</b> ${escapeHtml(p.questionText)}\n` +
-                `📈 <b>Số dư ví hiện tại:</b> ${state.balance.toLocaleString('vi-VN')}đ`;
+                `📊 <b>Tiến độ:</b> ${correctCount}/${questionBank.length} câu\n` +
+                `🏆 <b>Giải thưởng hiện tại:</b> ${state.prizePool.toLocaleString('vi-VN')}đ`;
 
             try {
                 await sendTelegramPhoto(selectedPhotoFile, caption);
 
-                const bag = state.dailyBags[p.bagIndex];
-                if (bag) {
-                    bag.status = 'lost';
-                    bag.penaltyType = 'photo';
-                }
                 state.pendingPenalty = null;
+                pickNextQuestion(p.questionId);
                 saveData();
-                updateUI();
 
                 document.getElementById('penaltyModal').classList.remove('active');
-                confetti({ particleCount: 60, spread: 70, origin: { y: 0.6 }, colors: ['#ff8fab', '#ffd166', '#80ed99'] });
+                updateUI();
 
                 Swal.fire({
                     title: 'Đã gửi ảnh cho anh!',
-                    text: 'Anh nhận được ảnh dễ thương rồi, tha tội cho bé chơi tiếp nha!',
+                    text: 'Giữ nguyên mức giải thưởng, tiếp tục chiến thôi bé ơi!',
                     icon: 'success',
-                    confirmButtonColor: 'var(--success-dark)',
+                    timer: 1400,
+                    showConfirmButton: false,
                     customClass: { popup: 'custom-popup' }
                 });
             } catch (err) {
@@ -2194,7 +1621,7 @@
             if (state.balance <= 0) {
                 Swal.fire({
                     title: 'Ví bé trống trơn',
-                    text: 'Bé hãy mở túi mù trả lời đúng để quay thưởng nhé!',
+                    text: 'Bé hãy hoàn thành thử thách để nhận thưởng nhé!',
                     icon: 'warning',
                     confirmButtonColor: 'var(--primary)',
                     customClass: { popup: 'custom-popup' }
@@ -2299,8 +1726,8 @@
             secretTapTimer = setTimeout(() => { secretTapCount = 0; }, 1500);
             if (secretTapCount >= 5) {
                 secretTapCount = 0;
-                const remainingCount = questionBank.filter(q => !state.answeredCorrectIds.includes(q.id)).length;
-                document.getElementById('adminBankCount').innerText = `${questionBank.length} câu (còn ${remainingCount} câu chưa trả lời đúng)`;
+                const correctCount = state.answeredCorrectIds.filter(id => questionBank.some(q => q.id === id)).length;
+                document.getElementById('adminStatusText').innerText = `${correctCount}/${questionBank.length} câu • Giải thưởng: ${state.prizePool.toLocaleString('vi-VN')}đ`;
                 document.getElementById('adminModal').classList.add('active');
             }
         };
@@ -2344,8 +1771,11 @@
 
             if (added > 0) {
                 saveQuestionBank();
+                state.challengeCompleted = false;
+                saveData();
+                updateUI();
                 document.getElementById('bulkQuestionsInput').value = '';
-                document.getElementById('adminBankCount').innerText = `${questionBank.length} câu`;
+                document.getElementById('adminStatusText').innerText = `Tổng kho: ${questionBank.length} câu`;
                 Swal.fire({
                     title: `Đã thêm ${added} câu hỏi!`,
                     icon: 'success',
@@ -2363,17 +1793,21 @@
             }
         };
 
-        window.adminReshuffleBags = function() {
-            state.pendingSpin = null;
+        window.adminResetChallenge = function() {
+            clearInterval(quizTimerInterval);
+            state.prizePool = INITIAL_PRIZE_POOL;
+            state.answeredCorrectIds = [];
+            state.currentQuestionId = null;
+            state.challengeStarted = false;
+            state.challengeCompleted = false;
             state.pendingPenalty = null;
-            state.dailyBags = generateDailyBags();
             saveData();
             updateUI();
             closeAdminModal();
             Swal.fire({
-                title: 'Đã xáo 8 túi mù mới!',
+                title: 'Đã đặt lại thử thách 100 câu (200k)!',
                 icon: 'success',
-                timer: 1300,
+                timer: 1400,
                 showConfirmButton: false,
                 customClass: { popup: 'custom-popup' }
             });
@@ -2396,7 +1830,8 @@
         window.resetDefaultBank = function() {
             questionBank = [...DEFAULT_QUESTION_BANK];
             saveQuestionBank();
-            document.getElementById('adminBankCount').innerText = `${questionBank.length} câu`;
+            updateUI();
+            document.getElementById('adminStatusText').innerText = `Tổng kho: ${questionBank.length} câu`;
             Swal.fire({
                 title: 'Đã khôi phục 100 câu gốc!',
                 icon: 'success',
